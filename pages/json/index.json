@@ -1,0 +1,42 @@
+{
+    "type": "tap",
+    "timeStamp": 1753,
+    "target": {
+        "id": "",
+        "offsetLeft": 214,
+        "offsetTop": 621,
+        "dataset": {
+            "pic": "http://ls.wshoto.com/attachment/images/1/2017/08/oUNv51Z4np4Mm57Vng52LN2vh1Nzup.jpg"
+        }
+    },
+    "currentTarget": {
+        "id": "",
+        "offsetLeft": 214,
+        "offsetTop": 621,
+        "dataset": {
+            "pic": "http://ls.wshoto.com/attachment/images/1/2017/08/oUNv51Z4np4Mm57Vng52LN2vh1Nzup.jpg"
+        }
+    },
+    "detail": {
+        "x": 336,
+        "y": 739
+    },
+    "touches": [
+        {
+            "identifier": 0,
+            "pageX": 336,
+            "pageY": 739,
+            "clientX": 336,
+            "clientY": 480
+        }
+    ],
+    "changedTouches": [
+        {
+            "identifier": 0,
+            "pageX": 336,
+            "pageY": 739,
+            "clientX": 336,
+            "clientY": 480
+        }
+    ]
+}

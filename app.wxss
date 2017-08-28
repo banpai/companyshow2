@@ -1,0 +1,9 @@
+@import 'utils/weui.wxss';
+/**app.wxss**/
+page {
+  background: #fff;
+} 
+
+.weui-article__h1{
+  margin-bottom: 0;
+}
