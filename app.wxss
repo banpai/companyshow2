@@ -1,4 +1,5 @@
 @import 'utils/weui.wxss';
+@import 'template/menuslid/menuslid.wxss';
 /**app.wxss**/
 page {
   background: #fff;

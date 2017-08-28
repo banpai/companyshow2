@@ -1,96 +1,121 @@
-<!--顶部图片 start-->
-<view class="top_img" style="background: url('{{m.flash}}');background-size:cover;">
-  <image class="top_icon" src="{{m.thumb}}" />
-  <view class="jzkj">{{ m.name }}</view>
-  <view class="jzkj2">“{{ m.logo_des }}。”</view>
-</view>
-<!--顶部图片 end-->
+<include src="../../template/menuslid/header.wxml" />
+<view class="page-top {{open ? 'c-state1' : ''}}">
+  <!--添加遮罩层 start-->
+  <view class="zhc {{open ? 'c-state2' : ''}}" bindtap="tap_ch"></view>
+  <!--添加遮罩层 end-->
 
-<!--头部三个input start-->
-<view class="weui-panel th_input">
-  <view class="weui-panel__bd">
-    <view class="weui-media-box weui-media-box_small-appmsg">
-      <view class="weui-cells weui-cells_in-small-appmsg">
-        <view bindtap="dh" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <view class="weui-cell__hd">
-            <image src="../../image/2.png" style="width: 20px;height: 20px;margin-right: 5px" />
+  <!--头部loge按钮 start-->
+  <view class="head">
+    <image bindtap="tap_ch" class="ic" src="../../image/icon_component.png" />
+  </view>
+  <!--头部logo按钮 end-->
+
+  <!--顶部banner图片 start-->
+  <view class="top_img">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item {{item}}">
+              <image class="ic" src="{{m.flash}}" style="width: 100%;"/>
           </view>
-          <view class="weui-cell__bd weui-cell_primary">
-            <view>{{ m.address }}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--顶部banner图片 end-->
+
+  <!--中部导航 start-->
+  <view class="weui-flex navbar">
+    <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="sy">
+      <view class="placeholder nb_lid">
+        <view class="nb_icon">
+          <image class="ic" src="../../image/1.png" />
+        </view>
+        <view class="nb_text">产品展示</view>
+      </view>
+    </view>
+    <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="tel">
+      <view class="placeholder nb_lid">
+        <view class="nb_icon">
+          <image class="ic" src="../../image/3.png" />
+        </view>
+        <view class="nb_text">案列展示</view>
+      </view>
+    </view>
+    <button open-type="contact" session-from="weapp" class="weui-flex__item nb_li" hover-class="weui-cell_active">
+      <view class="placeholder nb_lid">
+        <view class="nb_icon">
+          <image class="ic" src="../../image/5.png" />
+        </view>
+        <view class="nb_text">联系我们</view>
+      </view>
+    </button>
+    <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="dh">
+      <view class="placeholder nb_lid">
+        <view class="nb_icon">
+          <image class="ic" src="../../image/2.png" />
+        </view>
+        <view class="nb_text">关于我们</view>
+      </view>
+    </view>
+    <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="dh">
+      <view class="placeholder nb_lid">
+        <view class="nb_icon">
+          <image class="ic" src="../../image/2.png" />
+        </view>
+        <view class="nb_text">加入我们</view>
+      </view>
+    </view>
+  </view>
+  <!--中部导航 end-->
+  <!--头部三个input start-->
+  <view class="weui-panel th_input">
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-cells weui-cells_in-small-appmsg">
+          <view bindtap="dh" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="../../image/2.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>{{ m.address }}</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </view>
       </view>
     </view>
   </view>
-</view>
-<!--头部三个input end-->
+  <!--头部三个input end-->
 
-<view class="bgtpd"></view>
+  <view class="bgtpd"></view>
 
-<!--article start-->
-<view class="weui-article art_bp">
-  <view class="weui-article__h1">{{ m.info_name_ch }}</view>
-  <view class="weui-article__section">
-    <view class="weui-article__title" style="color:{{fuji}};">{{m.info_name_eng}}</view>
+  <!--article start-->
+  <view class="weui-article art_bp">
+    <view class="weui-article__h1">{{ m.info_name_ch }}</view>
     <view class="weui-article__section">
-      <view class="weui-article__p" style="margin-top:12px;">
-        {{m.info1}}
-        <span class="ckgd" bindtap="seemore">[查看更多]</span>
+      <view class="weui-article__title" style="color:{{fuji}};">{{m.info_name_eng}}</view>
+      <view class="weui-article__section">
+        <view class="weui-article__p" style="margin-top:12px;">
+          {{m.info1}}
+          <span class="ckgd" bindtap="seemore">[查看更多]</span>
+        </view>
       </view>
     </view>
   </view>
+  <!--article end-->
+  <view class="bgtpd"></view>
+  <!--产品图片 start-->
+  <view class="cptp">
+    <view class="weui-article__h1" style="text-align:center;margin-top:20px;">产品图片</view>
+    <view class="weui-article__title" style="text-align:center;margin-top:0px;font-size: 14px;color:{{fuji}};">Product Picture</view>
+    <view class="tu" wx:for="{{pic}}" wx:key="">
+      <view class="tb">
+        <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}');background-size: cover;" data-pic="{{item.thumb}}"></view>
+        <view class="textsj">{{ item.title }}</view>
+      </view>
+    </view>
+  </view>
+  <!--产品图片 end-->
+  <view class="footerb"></view>
 </view>
-<!--article end-->
-<view class="bgtpd"></view>
-<!--产品图片 start-->
-<view class="cptp">
-  <view class="weui-article__h1" style="text-align:center;margin-top:20px;">产品图片</view>
-  <view class="weui-article__title" style="text-align:center;margin-top:0px;font-size: 14px;color:{{fuji}};">Product Picture</view>
-  <view class="tu" wx:for="{{pic}}" wx:key="">
-    <view class="tb">
-      <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}');background-size: cover;" data-pic="{{item.thumb}}"></view>
-      <view class="textsj">{{ item.title }}</view>
-    </view>
-  </view>
-</view>
-<!--产品图片 end-->
-
-<view class="footerb"></view>
-
-<!--底部导航 start-->
-<view class="weui-flex navbar">
-  <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="sy">
-    <view class="placeholder nb_lid">
-      <view class="nb_icon">
-        <image class="ic" src="../../image/1.png" />
-      </view>
-      <view class="nb_text">首页</view>
-    </view>
-  </view>
-  <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="tel">
-    <view class="placeholder nb_lid">
-      <view class="nb_icon">
-        <image class="ic" src="../../image/3.png" />
-      </view>
-      <view class="nb_text">电话</view>
-    </view>
-  </view>
-  <button open-type="contact" session-from="weapp" class="weui-flex__item nb_li" hover-class="weui-cell_active">
-    <view class="placeholder nb_lid">
-      <view class="nb_icon">
-        <image class="ic" src="../../image/5.png" />
-      </view>
-      <view class="nb_text">客服</view>
-    </view>
-  </button>
-  <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="dh">
-    <view class="placeholder nb_lid">
-      <view class="nb_icon">
-        <image class="ic" src="../../image/2.png" />
-      </view>
-      <view class="nb_text">导航</view>
-    </view>
-  </view>
-</view>
-<!--底部导航 end-->

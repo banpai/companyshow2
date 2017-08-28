@@ -13,7 +13,19 @@ Page({
   data: {
     fuji: '#ddd',
     motto: 'Hello World',
-    userInfo: {}
+    userInfo: {},
+    open: false,
+    item: {
+      index: 0,
+      msg: 'this is a template',
+      time: '2016-09-15'
+    },
+    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 500
   },
   onLoad: function () {
     var that = this;
@@ -44,6 +56,13 @@ Page({
         app.globalData.pic = m;
       });
     }
+  },
+  //侧边栏滑动
+  tap_ch: function(){
+    var flag = !this.data.open;
+    this.setData({
+      open: flag
+    });
   },
   //拨打电话
   tel: function () {
