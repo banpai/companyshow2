@@ -28,10 +28,10 @@
   </view>
 
 
-<view class="page-top {{open ? 'c-state1' : ''}}" style="{{open ? state2 : ''}}">
+<view class="page-top {{open ? 'c-state1' : ''}}" style="{{open ? state2 : state3}}">
 
   <!--添加遮罩层 start-->
-  <view class="zhc {{open ? 'c-state2' : ''}}" style="{{open ? state2 : ''}}"  bindtap="tap_ch"></view>
+  <view class="zhc {{open ? 'c-state2' : ''}}" style="{{open ? state2 : state3}}"  bindtap="tap_ch"></view>
   <!--添加遮罩层 end-->
 
   <!--头部loge按钮 start-->

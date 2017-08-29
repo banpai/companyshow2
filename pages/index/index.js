@@ -21,6 +21,7 @@ Page({
     speed: 0,
     state1: '',
     state2: '',
+    state3: '',
     item: {
       index: 0,
       msg: 'this is a template',
@@ -95,8 +96,10 @@ Page({
       }, 500);
     }else{
       setTimeout(function(){
-        var state2 =  'width: ' + that.data.width3 + 'px !important';
+        var state2 =  'width: ' + that.data.width3 + 'px !important;';
+        var state3 =  'width: ' + that.data.width3 + 'px !important;overflow: hidden;';
         that.setData({
+          state3: state3,
           state2: state2
         })
       }, 500);
