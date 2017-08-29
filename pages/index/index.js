@@ -40,12 +40,13 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         var width = "width:" + res.windowWidth + 'px;';
-        var width2 = +res.windowWidth - 200;
+        var width2 = +res.windowWidth - 202;
+        var height = res.windowHeight - 2;
         that.setData({
           width: width,
           width2: width2,
           width3: res.windowWidth,
-          height: res.windowHeight
+          height: height
         })
       }
     });
