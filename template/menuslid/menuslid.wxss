@@ -40,13 +40,13 @@
   animation: mymove3 .5s;
   -webkit-animation: mymove3 .5s;
   margin-left: 200px;
+  z-index: 999999999999999999 !important;
 }
 .page-bottom {
   width: 200px;
   position: fixed;
   top: 0;
   left: -200px;
-  z-index: -1;
   height: 100%;
   background: #E8E8E8;
 }

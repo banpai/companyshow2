@@ -44,6 +44,7 @@ swiper {
 }
 .bgtpd {
   border-top: 30rpx solid #eee;
+  clear: both;
 }
 .art_bp .weui-article__h1 {
   text-align: center;
@@ -60,8 +61,8 @@ swiper {
 }
 .cptp {
   background: #fff;
-  border-left: 7.5px solid #fff;
-  border-right: 7.5px solid #fff;
+  border-left: 7px solid #fff;
+  border-right: 7px solid #fff;
 }
 .cptp .tu {
   width: 50%;
@@ -72,8 +73,8 @@ swiper {
 .cptp .tu .tb {
   background: #fff;
   border-top: 15px solid #fff;
-  border-left: 7.5px solid #fff;
-  border-right: 7.5px solid #fff;
+  border-left: 7px solid #fff;
+  border-right: 7px solid #fff;
   height: 100%;
 }
 .cptp .tu .tb .ic {
@@ -138,4 +139,65 @@ button::after {
   transform-origin: 0 0;
   box-sizing: border-box;
   border-radius: 10px;
+}
+.aboutus {
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+.aboutus .au_cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.aboutus .au_cover .bp_kk {
+  border-bottom: 3px solid #fff;
+  width: 71rpx;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+.aboutus .au_cover .bp_kk .t1_bp {
+  color: #fff;
+  width: 200px;
+}
+.aboutus .au_cover .t2_bp {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.aboutus .au_cover .seemore {
+  border: 1px solid #fff !important;
+  border-radius: 25px;
+  width: 100px;
+  font-size: 12px;
+  line-height: 25px;
+  margin-top: 15px;
+  margin-left: 15px;
+  color: #fff !important;
+  background: none !important;
+  text-align: center;
+}
+.bp_kk {
+  border-bottom: 3px solid orange;
+  width: 71rpx;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+.bp_kk .t1_bp {
+  color: #000;
+  width: 200px;
+}
+.seemore {
+  background: #eee;
+  border-radius: 25px;
+  width: 130px;
+  font-size: 12px;
+  line-height: 30px;
+  margin: 15px auto;
+  color: gray;
+  text-align: center;
 }

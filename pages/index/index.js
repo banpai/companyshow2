@@ -105,17 +105,6 @@ Page({
         })
       }, 500);
     }
-      // jsdx = setInterval(() => {
-      //   var speed = this.data.speed + 10;
-      //   console.log(speed);
-      //   if(speed <= 200){
-      //     this.setData({
-      //       speed: speed
-      //     });
-      //   }else{
-      //     clearInterval(jsdx);
-      //   }
-      // }, 60);
   },
   //拨打电话
   tel: function () {
