@@ -2,6 +2,8 @@
 //获取应用实例
 var app = getApp()
 
+var jsdx;
+
 //调用ajax
 const ajax = require('../../utils/util.js').ajax
 
@@ -14,7 +16,11 @@ Page({
     fuji: '#ddd',
     motto: 'Hello World',
     userInfo: {},
+    width: '',
     open: false,
+    speed: 0,
+    state1: '',
+    state2: '',
     item: {
       index: 0,
       msg: 'this is a template',
@@ -28,6 +34,20 @@ Page({
     duration: 500
   },
   onLoad: function () {
+    var that = this;
+    //重新获取高度
+    wx.getSystemInfo({
+      success: function (res) {
+        var width = "width:" + res.windowWidth + 'px;';
+        var width2 = +res.windowWidth - 200;
+        that.setData({
+          width: width,
+          width2: width2,
+          width3: res.windowWidth,
+          height: res.windowHeight
+        })
+      }
+    });
     var that = this;
     console.log(JSON.stringify(app.globalData));
     if (app.globalData.m) {
@@ -58,11 +78,40 @@ Page({
     }
   },
   //侧边栏滑动
-  tap_ch: function(){
+  tap_ch: function () {
+    console.log(11);
+    var that = this;
     var flag = !this.data.open;
     this.setData({
       open: flag
     });
+    if(this.data.open){
+      setTimeout(function(){
+        var state2 =  'width: ' + that.data.width2 + 'px !important;';
+        state2 = state2 + 'height: ' + that.data.height + 'px !important';
+        that.setData({
+          state2: state2
+        })
+      }, 500);
+    }else{
+      setTimeout(function(){
+        var state2 =  'width: ' + that.data.width3 + 'px !important';
+        that.setData({
+          state2: state2
+        })
+      }, 500);
+    }
+      // jsdx = setInterval(() => {
+      //   var speed = this.data.speed + 10;
+      //   console.log(speed);
+      //   if(speed <= 200){
+      //     this.setData({
+      //       speed: speed
+      //     });
+      //   }else{
+      //     clearInterval(jsdx);
+      //   }
+      // }, 60);
   },
   //拨打电话
   tel: function () {

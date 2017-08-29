@@ -1,17 +1,47 @@
-<include src="../../template/menuslid/header.wxml" />
-<view class="page-top {{open ? 'c-state1' : ''}}">
+<!-- <include src="../../template/menuslid/header.wxml" /> -->
+
+<view class="page">
+  <view class="page-bottom {{open ? 'c-state3' : ''}}">
+      <view class="page-content">
+          <view class="wc">
+              <text>首页</text>
+          </view>
+          <view class="wc">
+              <text>产品展示</text>
+          </view>
+          <view class="wc">
+              <text>案列展示</text>
+          </view>
+          <view class="wc">
+              <text>联系我们</text>
+          </view>
+          <view class="wc">
+              <text>关于我们</text>
+          </view>
+          <view class="wc">
+              <text>加入我们</text>
+          </view>
+          <view class="wc">
+              <text>新闻中心</text>
+          </view>
+      </view>
+  </view>
+
+
+<view class="page-top {{open ? 'c-state1' : ''}}" style="{{open ? state2 : ''}}">
+
   <!--添加遮罩层 start-->
-  <view class="zhc {{open ? 'c-state2' : ''}}" bindtap="tap_ch"></view>
+  <view class="zhc {{open ? 'c-state2' : ''}}" style="{{open ? state2 : ''}}"  bindtap="tap_ch"></view>
   <!--添加遮罩层 end-->
 
   <!--头部loge按钮 start-->
-  <view class="head">
+  <view class="head" style="{{width}}">
     <image bindtap="tap_ch" class="ic" src="../../image/icon_component.png" />
   </view>
   <!--头部logo按钮 end-->
 
   <!--顶部banner图片 start-->
-  <view class="top_img">
+  <view class="top_img" style="{{width}}">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{background}}" wx:key="*this">
         <swiper-item>
@@ -25,7 +55,7 @@
   <!--顶部banner图片 end-->
 
   <!--中部导航 start-->
-  <view class="weui-flex navbar">
+  <view class="weui-flex navbar" style="{{width}}">
     <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="sy">
       <view class="placeholder nb_lid">
         <view class="nb_icon">
@@ -68,8 +98,9 @@
     </view>
   </view>
   <!--中部导航 end-->
+
   <!--头部三个input start-->
-  <view class="weui-panel th_input">
+  <view class="weui-panel th_input" style="{{width}}">
     <view class="weui-panel__bd">
       <view class="weui-media-box weui-media-box_small-appmsg">
         <view class="weui-cells weui-cells_in-small-appmsg">
@@ -88,10 +119,10 @@
   </view>
   <!--头部三个input end-->
 
-  <view class="bgtpd"></view>
+  <view class="bgtpd" style="{{width}}"></view>
 
   <!--article start-->
-  <view class="weui-article art_bp">
+  <view class="weui-article art_bp" style="{{width}}">
     <view class="weui-article__h1">{{ m.info_name_ch }}</view>
     <view class="weui-article__section">
       <view class="weui-article__title" style="color:{{fuji}};">{{m.info_name_eng}}</view>
@@ -104,9 +135,9 @@
     </view>
   </view>
   <!--article end-->
-  <view class="bgtpd"></view>
+  <view class="bgtpd" style="{{width}}"></view>
   <!--产品图片 start-->
-  <view class="cptp">
+  <view class="cptp" style="{{width}}">
     <view class="weui-article__h1" style="text-align:center;margin-top:20px;">产品图片</view>
     <view class="weui-article__title" style="text-align:center;margin-top:0px;font-size: 14px;color:{{fuji}};">Product Picture</view>
     <view class="tu" wx:for="{{pic}}" wx:key="">
@@ -118,4 +149,5 @@
   </view>
   <!--产品图片 end-->
   <view class="footerb"></view>
+</view>
 </view>

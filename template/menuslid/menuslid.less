@@ -1,24 +1,44 @@
 @keyframes mymove
 {
     from {
-        transform: rotate(0deg) scale(1) translate(0px,0%);   
+        margin-left: 0px;  
        
     }to {
-        transform: rotate(0deg) scale(1) translate(200px,0%);   
-        
+        margin-left: 200px;
     }
 }
 
-@-webkit-keyframes mymove /* Safari and Chrome */
+@-webkit-keyframes mymove 
 {
-    from { -webkit-transform: rotate(0deg) scale(1) translate(0px,0%);}
-    to {-webkit-transform: rotate(0deg) scale(1) translate(200px,0%);}
+    from {margin-left: 0px;  }
+    to {margin-left: 200px;
+    }
 }
 .c-state1{
-    transform: rotate(0deg) scale(1) translate(200px,0%);   
-    -webkit-transform: rotate(0deg) scale(1) translate(200px,0%);
     animation:mymove .5s;
     -webkit-animation:mymove .5s;
+    margin-left: 200px;
+    overflow: hidden;
+}
+@keyframes mymove3
+{
+    from {
+        margin-left: 0px;  
+       
+    }to {
+        margin-left: 200px;
+    }
+}
+
+@-webkit-keyframes mymove3
+{
+    from {margin-left: 0px;  }
+    to {margin-left: 200px;}
+}
+.c-state3{
+    animation:mymove3 .5s;
+    -webkit-animation:mymove3 .5s;
+    margin-left: 200px;
 }
 .page-bottom{
     width: 200px;
