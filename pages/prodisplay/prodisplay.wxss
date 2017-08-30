@@ -1,14 +1,3 @@
-@import 'utils/weui.wxss';
-@import 'template/menuslid/menuslid.wxss';
-/**app.wxss**/
-page {
-  background: #fff;
-} 
-
-.weui-article__h1{
-  margin-bottom: 0;
-}
-
 .footerb {
   height: 185rpx;
   clear: both;

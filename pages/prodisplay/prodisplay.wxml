@@ -24,14 +24,14 @@
 
     <!--中部导航 start-->
     <view class="weui-flex navbar" style="{{width}}">
-      <navigator url="../prodisplay/prodisplay" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="sy">
+      <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="sy">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
             <image class="ic" src="../../image/1.png" />
           </view>
           <view class="nb_text">产品展示</view>
         </view>
-      </navigator>
+      </view>
       <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="tel">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
@@ -101,10 +101,16 @@
           <view class="textsj">{{ item.title }}</view>
         </view>
       </view>
+      <view class="tu" wx:for="{{pic}}" wx:key="">
+        <view class="tb">
+          <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
+          <view class="textsj">{{ item.title }}</view>
+        </view>
+      </view>
     </view>
     <view style="clear: both;height: 1px;background: #fff;"></view>
     <!--了解更多按钮 start-->
-    <navigator url="../prodisplay/prodisplay" open-type="redirect"  class="seemore">查看更多</navigator>
+    <view class="seemore">查看更多</view>
     <!--了解更多按钮 end-->
     <!--产品展示 end-->
 

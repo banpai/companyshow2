@@ -71,9 +71,21 @@
 }
 .head {
   height: 100rpx;
+  position: fixed;
+  z-index: 1000;
+  background: #fff;
 }
 .head .ic {
   width: 50rpx;
   height: 50rpx;
   margin: 20rpx;
+}
+.head .iclogo {
+  display: block;
+  position: absolute;
+  right: 50%;
+  margin-right: -85px;
+  top: 5px;
+  width: 170px;
+  height: 40px;
 }

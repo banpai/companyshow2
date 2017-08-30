@@ -1,0 +1,25 @@
+<view class="page-bottom {{open ? 'c-state3' : ''}}">
+    <view class="page-content">
+        <navigator url="../index/index" open-type="switchTab" class="wc">
+            <text>首页</text>
+        </navigator>
+        <navigator url="../prodisplay/prodisplay" open-type="redirect" class="wc">
+            <text>产品展示</text>
+        </navigator>
+        <view class="wc">
+            <text>案列展示</text>
+        </view>
+        <view class="wc">
+            <text>联系我们</text>
+        </view>
+        <navigator url="../aboutus/aboutus" open-type="redirect" class="wc">
+            <text>关于我们</text>
+        </navigator>
+        <view class="wc">
+            <text>加入我们</text>
+        </view>
+        <view class="wc">
+            <text>新闻中心</text>
+        </view>
+    </view>
+</view>
