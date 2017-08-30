@@ -13,6 +13,37 @@ const newslist_api = require('../../config').newslist_api
 
 Page({
   data: {
+    markers: [{
+      iconPath: "../../image/company.png",
+      id: 0,
+      latitude: 23.099994,
+      longitude: 113.324520,
+      width: 200,
+      height: 30
+    }],
+    polyline: [{
+      points: [{
+        longitude: 113.3245211,
+        latitude: 23.10229
+      }, {
+        longitude: 113.324520,
+        latitude: 23.21229
+      }],
+      color:"#FF0000DD",
+      width: 2,
+      dottedLine: true
+    }],
+    controls: [{
+      id: 1,
+      iconPath: '',
+      position: {
+        left: 0,
+        top: 300 - 50,
+        width: 50,
+        height: 50
+      },
+      clickable: true
+    }],
     fuji: '#ddd',
     motto: 'Hello World',
     userInfo: {},
@@ -32,7 +63,8 @@ Page({
     vertical: false,
     autoplay: true,
     interval: 2000,
-    duration: 500
+    duration: 500,
+    mapwidth: 200
   },
   onLoad: function () {
     var that = this;
@@ -42,11 +74,13 @@ Page({
         var width = "width:" + res.windowWidth + 'px;';
         var width2 = +res.windowWidth - 202;
         var height = res.windowHeight - 2;
+        var mapwidth = +res.windowWidth - 30;
         that.setData({
           width: width,
           width2: width2,
           width3: res.windowWidth,
-          height: height
+          height: height,
+          mapwidth: mapwidth
         })
       }
     });
@@ -141,5 +175,14 @@ Page({
       longitude: Number(that.data.m.longitude),
       scale: 28
     })
+  },
+  regionchange(e) {
+    console.log(e.type)
+  },
+  markertap(e) {
+    console.log(e.markerId)
+  },
+  controltap(e) {
+    console.log(e.controlId)
   }
 })

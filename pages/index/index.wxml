@@ -145,7 +145,9 @@
     <view class="seemore">查看更多</view>
     <!--了解更多按钮 end-->
     <!--产品展示 end-->
+
     <view class="bgtpd" style="{{width}}"></view>
+
     <!--案列展示 start-->
     <view class="cptp">
       <!--标题栏 start-->
@@ -173,6 +175,120 @@
 
     <view class="bgtpd" style="{{width}}"></view>
 
+    <!--新闻中心 start-->
+    <view class="cptp">
+      <!--标题栏 start-->
+      <view class="bp_kk">
+        <view class="t1_bp">新闻中心</view>
+      </view>
+      <!--标题栏 end-->
+      <view style="clear: both;height: 15px;background: #fff;"></view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{m.flash}}" style="width: 50px; height: 50px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view style="font-size: 16px;color: #888888;">摘要信息</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{m.flash}}" style="width: 50px; height: 50px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view style="font-size: 16px;color: #888888;">摘要信息</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{m.flash}}" style="width: 50px; height: 50px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view style="font-size: 16px;color: #888888;">摘要信息</view>
+        </view>
+      </view>
+    </view>
+    <view style="clear: both;height: 1px;background: #fff;border-top:1rpx solid #d9d9d9;margin-left:22px;margin-right:7px;"></view>
+    <!--了解更多按钮 start-->
+    <view class="seemore">查看更多</view>
+    <!--新闻中心 end-->
+
+    <view class="bgtpd" style="{{width}}"></view>
+
+    <!--联系我们 start-->
+    <!--标题栏 start-->
+    <view class="bp_kk">
+      <view class="t1_bp">联系我们</view>
+    </view>
+    <!--标题栏 end-->
+
+    <!--地图展示 start-->
+    <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap"
+      markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location
+      style="width:{{mapwidth}}px;"></map>
+    <!--地图展示 end-->
+    <view class="page__title">沧州市米尔网络科技有限公司</view>
+    <view class="weui-form-preview__bd">
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">地址</view>
+        <view class="weui-form-preview__value">很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">电话</view>
+        <view class="weui-form-preview__value">0317-5505108</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">手机</view>
+        <view class="weui-form-preview__value">13315710716</view>
+      </view>
+    </view>
+    <!--联系我们 end-->
+
+    <view class="bgtpd" style="{{width}}"></view>
+
+    <!--留言板 start-->
+
+    <!--标题栏 start-->
+    <view class="bp_kk">
+      <view class="t1_bp">留言板</view>
+    </view>
+    <view style="height: 15px;"></view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">手机号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入手机号" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">邮箱</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入邮箱" />
+        </view>
+      </view>
+    </view>
+    <view style="height: 15px;"></view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder="请输入您的建议" style="height: 3.3em" />
+        </view>
+      </view>
+    </view>
+    <!--标题栏 end-->
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="showTopTips">提交</button>
+    </view>
+
+    <!--留言板 end-->
+
     <view class="footerb"></view>
+
+
   </view>
 </view>
