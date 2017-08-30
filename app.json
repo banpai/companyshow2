@@ -8,18 +8,19 @@
     "pages/connectus/connectus",
     "pages/joinus/joinus",
     "pages/newscenter/newscenter",
-    "pages/consultation/consultation"
+    "pages/consultation/consultation",
+    "pages/personal/personal"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#312E43",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"#fff"
   },"tabBar": {
     "color": "#7A7E83",
     "selectedColor": "#3cc51f",
     "borderStyle": "black",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#fff",
     "list": [{
       "pagePath": "pages/index/index",
       "iconPath": "image/icon_component.png",
@@ -31,7 +32,7 @@
       "selectedIconPath": "image/icon_API_HL.png",
       "text": "我要咨询"
     }, {
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/personal/personal",
       "iconPath": "image/icon_API.png",
       "selectedIconPath": "image/icon_API_HL.png",
       "text": "个人中心"

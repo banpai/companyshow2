@@ -223,3 +223,8 @@ button::after {
 .page__title {
   margin-left: 15px;
 }
+
+button[type="primary"] {
+  color:#fff;
+  background-color:#312E43;
+}  
