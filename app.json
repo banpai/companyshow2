@@ -7,7 +7,8 @@
     "pages/exmdisplay/exmdisplay",
     "pages/connectus/connectus",
     "pages/joinus/joinus",
-    "pages/newscenter/newscenter"
+    "pages/newscenter/newscenter",
+    "pages/consultation/consultation"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -25,7 +26,7 @@
       "selectedIconPath": "image/icon_component_HL.png",
       "text": "米尔网络"
     }, {
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/consultation/consultation",
       "iconPath": "image/icon_API.png",
       "selectedIconPath": "image/icon_API_HL.png",
       "text": "我要咨询"
