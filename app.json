@@ -4,7 +4,10 @@
     "pages/prodisplay/prodisplay",
     "pages/aboutus/aboutus",
     "pages/article/article",
-    "pages/exmdisplay/exmdisplay"
+    "pages/exmdisplay/exmdisplay",
+    "pages/connectus/connectus",
+    "pages/joinus/joinus",
+    "pages/newscenter/newscenter"
   ],
   "window":{
     "backgroundTextStyle":"light",

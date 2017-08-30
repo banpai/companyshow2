@@ -1,0 +1,45 @@
+<!-- <include src="../../template/menuslid/header.wxml" /> -->
+
+<view class="page">
+  <include src="../../template/menuslid/header.wxml" />
+
+
+  <view class="page-top {{open ? 'c-state1' : ''}}" style="{{open ? state2 : state3}}">
+
+    <include src="../../template/menuslid/body.wxml" />
+
+    <include src="../../template/topcartoon/header.wxml" />
+
+    <!--联系我们 start-->
+    <!--标题栏 start-->
+    <view class="bp_kk" style="{{width}}">
+        <view class="t1_bp">联系我们</view>
+      </view>
+      <!--标题栏 end-->
+  
+      <!--地图展示 start-->
+      <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap"
+        markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location
+        style="width:{{mapwidth}}px;"></map>
+      <!--地图展示 end-->
+      <view class="page__title">沧州市米尔网络科技有限公司</view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">地址</view>
+          <view class="weui-form-preview__value">很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">电话</view>
+          <view class="weui-form-preview__value">0317-5505108</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">手机</view>
+          <view class="weui-form-preview__value">13315710716</view>
+        </view>
+      </view>
+      <!--联系我们 end-->
+    <view class="footerb"></view>
+
+
+  </view>
+</view>

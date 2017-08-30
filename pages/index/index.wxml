@@ -24,7 +24,8 @@
 
     <!--中部导航 start-->
     <view class="weui-flex navbar" style="{{width}}">
-      <navigator url="../prodisplay/prodisplay" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="sy">
+      <navigator url="../prodisplay/prodisplay" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active"
+        bindtap="sy">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
             <image class="ic" src="../../image/1.png" />
@@ -32,7 +33,8 @@
           <view class="nb_text">产品展示</view>
         </view>
       </navigator>
-      <navigator url="../exmdisplay/exmdisplay" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="tel">
+      <navigator url="../exmdisplay/exmdisplay" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active"
+        bindtap="tel">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
             <image class="ic" src="../../image/3.png" />
@@ -40,14 +42,14 @@
           <view class="nb_text">案列展示</view>
         </view>
       </navigator>
-      <button open-type="contact" session-from="weapp" class="weui-flex__item nb_li" hover-class="weui-cell_active">
-      <view class="placeholder nb_lid">
-        <view class="nb_icon">
-          <image class="ic" src="../../image/5.png" />
+      <navigator url="../connectus/connectus" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active">
+        <view class="placeholder nb_lid">
+          <view class="nb_icon">
+            <image class="ic" src="../../image/5.png" />
+          </view>
+          <view class="nb_text">联系我们</view>
         </view>
-        <view class="nb_text">联系我们</view>
-      </view>
-    </button>
+      </navigator>
       <navigator url="../../pages/aboutus/aboutus?title=redirect" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
@@ -56,14 +58,14 @@
           <view class="nb_text">关于我们</view>
         </view>
       </navigator>
-      <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="dh">
+      <navigator url="../joinus/joinus" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
             <image class="ic" src="../../image/2.png" />
           </view>
           <view class="nb_text">加入我们</view>
         </view>
-      </view>
+      </navigator>
     </view>
     <!--中部导航 end-->
 
@@ -104,7 +106,7 @@
     </view>
     <view style="clear: both;height: 1px;background: #fff;"></view>
     <!--了解更多按钮 start-->
-    <navigator url="../prodisplay/prodisplay" open-type="redirect"  class="seemore">查看更多</navigator>
+    <navigator url="../prodisplay/prodisplay" open-type="redirect" class="seemore">查看更多</navigator>
     <!--了解更多按钮 end-->
     <!--产品展示 end-->
 
@@ -132,7 +134,7 @@
     </view>
     <view style="clear: both;height: 1px;background: #fff;"></view>
     <!--了解更多按钮 start-->
-    <navigator url="../exmdisplay/exmdisplay" open-type="redirect"   class="seemore">查看更多</navigator>
+    <navigator url="../exmdisplay/exmdisplay" open-type="redirect" class="seemore">查看更多</navigator>
     <!--案列展示 end-->
 
     <view class="bgtpd" style="{{width}}"></view>

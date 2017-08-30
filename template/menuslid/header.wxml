@@ -9,15 +9,15 @@
         <navigator url="../exmdisplay/exmdisplay" open-type="redirect"  class="wc">
             <text>案列展示</text>
         </navigator>
-        <view class="wc">
+        <navigator url="../connectus/connectus" open-type="redirect" class="wc">
             <text>联系我们</text>
-        </view>
+        </navigator>
         <navigator url="../aboutus/aboutus" open-type="redirect" class="wc">
             <text>关于我们</text>
         </navigator>
-        <view class="wc">
+        <navigator url="../joinus/joinus" open-type="redirect"  class="wc">
             <text>加入我们</text>
-        </view>
+        </navigator>
         <view class="wc">
             <text>新闻中心</text>
         </view>

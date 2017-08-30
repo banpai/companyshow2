@@ -1,0 +1,47 @@
+<!-- <include src="../../template/menuslid/header.wxml" /> -->
+
+<view class="page">
+  <include src="../../template/menuslid/header.wxml" />
+  <view class="page-top {{open ? 'c-state1' : ''}}" style="{{open ? state2 : state3}}">
+    <include src="../../template/menuslid/body.wxml" />
+
+    <include src="../../template/topcartoon/header.wxml" />
+
+    <!--大图 start-->
+    <!-- <view class="aboutus" style="{{width}};height: auto;margin-top: 15px;">
+      <image class="ic" src="{{m.flash}}" style="width: 100%;" />
+    </view> -->
+    <!--大图 end-->
+
+    <!--文章 start-->
+    <view class="weui-article" style="{{width}}">
+      <view class="weui-article__h1">大标题</view>
+      <view class="weui-article__section">
+        <view class="weui-article__title">章标题</view>
+        <view class="weui-article__section">
+          <view class="weui-article__h3">1.1 节标题</view>
+          <view class="weui-article__p">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </view>
+
+        </view>
+        <view class="weui-article__section">
+          <view class="weui-article__h3">1.2 节标题</view>
+          <view class="weui-article__p">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </view>
+          <view class="weui-article__p">
+            <image class="weui-article__img" src="../images/pic_article.png" mode="aspectFit" style="height: 180px" />
+            <image class="weui-article__img" src="../images/pic_article.png" mode="aspectFit" style="height: 180px" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--文章 end-->
+
+
+  </view>
+</view>
