@@ -32,14 +32,14 @@
           <view class="nb_text">产品展示</view>
         </view>
       </navigator>
-      <view class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="tel">
+      <navigator url="../exmdisplay/exmdisplay" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active" bindtap="tel">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
             <image class="ic" src="../../image/3.png" />
           </view>
           <view class="nb_text">案列展示</view>
         </view>
-      </view>
+      </navigator>
       <button open-type="contact" session-from="weapp" class="weui-flex__item nb_li" hover-class="weui-cell_active">
       <view class="placeholder nb_lid">
         <view class="nb_icon">
@@ -132,7 +132,7 @@
     </view>
     <view style="clear: both;height: 1px;background: #fff;"></view>
     <!--了解更多按钮 start-->
-    <view class="seemore">查看更多</view>
+    <navigator url="../exmdisplay/exmdisplay" open-type="redirect"   class="seemore">查看更多</navigator>
     <!--案列展示 end-->
 
     <view class="bgtpd" style="{{width}}"></view>

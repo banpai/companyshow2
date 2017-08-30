@@ -6,9 +6,9 @@
         <navigator url="../prodisplay/prodisplay" open-type="redirect" class="wc">
             <text>产品展示</text>
         </navigator>
-        <view class="wc">
+        <navigator url="../exmdisplay/exmdisplay" open-type="redirect"  class="wc">
             <text>案列展示</text>
-        </view>
+        </navigator>
         <view class="wc">
             <text>联系我们</text>
         </view>

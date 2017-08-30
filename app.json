@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/prodisplay/prodisplay",
     "pages/aboutus/aboutus",
-    "pages/article/article"
+    "pages/article/article",
+    "pages/exmdisplay/exmdisplay"
   ],
   "window":{
     "backgroundTextStyle":"light",

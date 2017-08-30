@@ -14,7 +14,7 @@
     <view class="cptp" style="{{width}}">
       <!--标题栏 start-->
       <view class="bp_kk">
-        <view class="t1_bp">产品展示</view>
+        <view class="t1_bp">案列展示</view>
       </view>
       <!--标题栏 end-->
       <view class="tu" wx:for="{{pic}}" wx:key="">

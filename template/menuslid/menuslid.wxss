@@ -48,7 +48,7 @@
   top: 0;
   left: -200px;
   height: 100%;
-  background: #E8E8E8;
+  background: #FAFAFA;
 }
 .page-bottom .wc {
   text-align: center;
