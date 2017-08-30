@@ -13,6 +13,7 @@ const newslist_api = require('../../config').newslist_api
 
 Page({
   data: {
+    title: '——关于我们——',
     markers: [{
       iconPath: "../../image/company.png",
       id: 0,

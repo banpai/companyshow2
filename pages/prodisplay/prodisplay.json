@@ -1,3 +1,4 @@
 {
-    "navigationBarTitleText": "产品展示"
+    "navigationBarTitleText": "产品展示",
+    "enablePullDownRefresh": true
 }

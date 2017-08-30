@@ -13,6 +13,7 @@ const newslist_api = require('../../config').newslist_api
 
 Page({
   data: {
+    title: '——产品展示——',
     markers: [{
       iconPath: "../../image/company.png",
       id: 0,
@@ -29,7 +30,7 @@ Page({
         longitude: 113.324520,
         latitude: 23.21229
       }],
-      color:"#FF0000DD",
+      color: "#FF0000DD",
       width: 2,
       dottedLine: true
     }],
@@ -121,18 +122,18 @@ Page({
     this.setData({
       open: flag
     });
-    if(this.data.open){
-      setTimeout(function(){
-        var state2 =  'width: ' + that.data.width2 + 'px !important;';
+    if (this.data.open) {
+      setTimeout(function () {
+        var state2 = 'width: ' + that.data.width2 + 'px !important;';
         state2 = state2 + 'height: ' + that.data.height + 'px !important';
         that.setData({
           state2: state2
         })
       }, 500);
-    }else{
-      setTimeout(function(){
-        var state2 =  'width: ' + that.data.width3 + 'px !important;';
-        var state3 =  'width: ' + that.data.width3 + 'px !important;overflow: hidden;';
+    } else {
+      setTimeout(function () {
+        var state2 = 'width: ' + that.data.width3 + 'px !important;';
+        var state3 = 'width: ' + that.data.width3 + 'px !important;overflow: hidden;';
         that.setData({
           state3: state3,
           state2: state2
@@ -184,5 +185,22 @@ Page({
   },
   controltap(e) {
     console.log(e.controlId)
+  },
+  // 下拉刷新回调接口
+  onPullDownRefresh: function () {
+    wx.showToast({
+      title: '数据加载中',
+      icon: 'loading',
+      duration: 3000
+    });
+    // do somthing
+  },
+  // 上拉加载回调接口
+  onReachBottom: function () {
+    wx.showToast({
+      title: '数据加载中',
+      icon: 'loading',
+      duration: 3000
+    });
   }
 })

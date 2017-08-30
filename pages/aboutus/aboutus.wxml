@@ -5,14 +5,7 @@
   <view class="page-top {{open ? 'c-state1' : ''}}" style="{{open ? state2 : state3}}">
     <include src="../../template/menuslid/body.wxml" />
 
-    <!--关于我们 start-->
-    <view class="aboutus" style="{{width}}">
-      <image class="ic" src="{{m.flash}}" style="width: 100%;" />
-      <view class="au_cover">
-        <text class="gywm">——关于我们——</text>
-      </view>
-    </view>
-    <!--关于我们 end-->
+    <include src="../../template/topcartoon/header.wxml" />
 
     <!--大图 start-->
     <view class="aboutus" style="{{width}};height: auto;margin-top: 15px;">

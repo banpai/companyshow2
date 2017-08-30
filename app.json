@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/prodisplay/prodisplay",
+    "pages/aboutus/aboutus",
     "pages/article/article"
   ],
   "window":{
