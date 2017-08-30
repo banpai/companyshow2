@@ -18,8 +18,8 @@
         <navigator url="../joinus/joinus" open-type="redirect"  class="wc">
             <text>加入我们</text>
         </navigator>
-        <view class="wc">
+        <navigator url="../newscenter/newscenter" open-type="redirect" class="wc">
             <text>新闻中心</text>
-        </view>
+        </navigator>
     </view>
 </view>

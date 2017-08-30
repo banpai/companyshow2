@@ -10,31 +10,35 @@
 
     <include src="../../template/topcartoon/header.wxml" />
 
-    <!--产品展示 start-->
+    <!--新闻中心 start-->
     <view class="cptp" style="{{width}}">
-      <!--标题栏 start-->
-      <view class="bp_kk">
-        <view class="t1_bp">案列展示</view>
-      </view>
-      <!--标题栏 end-->
-      <view class="tu" wx:for="{{pic}}" wx:key="">
-        <view class="tb">
-          <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
-          <view class="textsj">{{ item.title }}</view>
+      <view style="clear: both;height: 15px;background: #fff;"></view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{m.flash}}" style="width: 50px; height: 50px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view style="font-size: 16px;color: #888888;">摘要信息</view>
         </view>
       </view>
-      <view class="tu" wx:for="{{pic}}" wx:key="">
-        <view class="tb">
-          <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
-          <view class="textsj">{{ item.title }}</view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{m.flash}}" style="width: 50px; height: 50px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view style="font-size: 16px;color: #888888;">摘要信息</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{m.flash}}" style="width: 50px; height: 50px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view style="font-size: 16px;color: #888888;">摘要信息</view>
         </view>
       </view>
     </view>
-    <view style="clear: both;height: 1px;background: #fff;"></view>
-    <!--产品展示 end-->
-
-    <view class="footerb"></view>
-
-
+    <view style="clear: both;height: 1px;background: #fff;border-top:1rpx solid #d9d9d9;margin-left:22px;margin-right:7px;"></view>
+    <!--新闻中心 end-->
   </view>
 </view>
