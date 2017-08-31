@@ -11,8 +11,8 @@
     "pages/consultation/consultation",
     "pages/personal/personal",
     "pages/set/set",
-    "pages/address/address",
-    "pages/address/addaddress"
+    "pages/consultationlist/consultationlist",
+    "pages/edit/edit"
   ],
   "window":{
     "backgroundTextStyle":"light",
