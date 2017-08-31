@@ -11,7 +11,7 @@
     <include src="../../template/topcartoon/header.wxml" />
 
     <!--产品展示 start-->
-    <view class="cptp" style="{{width}}">
+    <view class="cptp">
       <!--标题栏 start-->
       <view class="bp_kk">
         <view class="t1_bp">案列展示</view>

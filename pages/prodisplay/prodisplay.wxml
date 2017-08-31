@@ -2,16 +2,12 @@
 
 <view class="page">
   <include src="../../template/menuslid/header.wxml" />
-
-
   <view class="page-top {{open ? 'c-state1' : ''}}" style="{{open ? state2 : state3}}">
-
     <include src="../../template/menuslid/body.wxml" />
-
     <include src="../../template/topcartoon/header.wxml" />
 
     <!--产品展示 start-->
-    <view class="cptp" style="{{width}}">
+    <view class="cptp">
       <!--标题栏 start-->
       <view class="bp_kk">
         <view class="t1_bp">产品展示</view>

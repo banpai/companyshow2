@@ -12,7 +12,7 @@
 
     <!--联系我们 start-->
     <!--标题栏 start-->
-    <view class="bp_kk" style="{{width}}">
+    <view class="bp_kk">
         <view class="t1_bp">联系我们</view>
       </view>
       <!--标题栏 end-->

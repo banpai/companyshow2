@@ -1,10 +1,10 @@
-<!--添加遮罩层 start-->
-<view class="zhc {{open ? 'c-state2' : ''}}" style="{{open ? state2 : state3}}" bindtap="tap_ch"></view>
-<!--添加遮罩层 end-->
+  <!--添加遮罩层 start-->
+  <view class="zhc {{open ? 'c-state2' : ''}}" style="{{open ? state2 : state3}}" bindtap="tap_ch"></view>
+  <!--添加遮罩层 end-->
 
-<!--头部loge按钮 start-->
-<view class="head" style="{{width}}">
-  <image bindtap="tap_ch" class="ic" src="../../image/icon_component.png" />
-  <image bindtap="tap_ch" class="iclogo" src="../../image/logo.png" />
-</view>
-<!--头部logo按钮 end-->
+  <!--头部loge按钮 start-->
+  <view class="head" style="{{width}}">
+    <image bindtap="tap_ch" class="ic" src="../../image/icon_component.png" />
+    <image bindtap="tap_ch" class="iclogo" src="../../image/logo.png" />
+  </view>
+  <!--头部logo按钮 end-->
