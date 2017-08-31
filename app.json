@@ -9,7 +9,10 @@
     "pages/joinus/joinus",
     "pages/newscenter/newscenter",
     "pages/consultation/consultation",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/set/set",
+    "pages/address/address",
+    "pages/address/addaddress"
   ],
   "window":{
     "backgroundTextStyle":"light",

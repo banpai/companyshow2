@@ -1,0 +1,21 @@
+<view class="weui-cells__title">允许“{{name}}”使用使用我的</view>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">通讯地址</view>
+        <view class="weui-cell__ft">
+            <switch checked bindchange="txdz"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">地理位置</view>
+        <view class="weui-cell__ft">
+            <switch checked bindchange="dlwz"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">用户信息</view>
+        <view class="weui-cell__ft">
+            <switch checked  bindchange="yhxx"/>
+        </view>
+    </view>
+</view>

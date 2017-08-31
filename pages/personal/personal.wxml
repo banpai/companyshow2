@@ -18,14 +18,14 @@
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_small-appmsg">
                     <view class="weui-cells weui-cells_in-small-appmsg">
-                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <view bindtap="tapxinxi" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
                                 <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view>同步微信信息</view>
                             </view>
-                        </navigator>
+                        </view>
                     </view>
                 </view>
             </view>
@@ -35,7 +35,7 @@
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_small-appmsg">
                     <view class="weui-cells weui-cells_in-small-appmsg">
-                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <view bindtap="qiyeshow" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
                                 <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
                             </view>
@@ -43,6 +43,15 @@
                                 <view>企业展示</view>
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </view>
+                        <navigator wx:if="{{qiyeshowflag}}" url="../connectus/connectus" open-type="redirect" class="weui-cell weui-cell_access"
+                            hover-class="weui-cell_active">
+                            <view class="weui-cell__hd">
+                                <view class="weui-cell__ft_in-access"></view>
+                            </view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view style="padding-left: 13px;font-size: 14px;">联系我们</view>
+                            </view>
                         </navigator>
                     </view>
                 </view>
@@ -53,7 +62,7 @@
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_small-appmsg">
                     <view class="weui-cells weui-cells_in-small-appmsg">
-                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <view bindtap="zxshow" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
                                 <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
                             </view>
@@ -61,6 +70,14 @@
                                 <view>咨询信息</view>
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </view>
+                        <navigator wx:if="{{zxshowflag}}" url="../connectus/connectus" open-type="redirect" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd">
+                                <view class="weui-cell__ft_in-access"></view>
+                            </view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view style="padding-left: 13px;font-size: 14px;">我的咨询</view>
+                            </view>
                         </navigator>
                     </view>
                 </view>
@@ -71,15 +88,15 @@
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_small-appmsg">
                     <view class="weui-cells weui-cells_in-small-appmsg">
-                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <view bindtap="getaddress" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
                                 <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view>收货地址</view>
                             </view>
-                        </navigator>
-                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        </view>
+                        <navigator url="../set/set" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
                                 <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
                             </view>
@@ -87,14 +104,14 @@
                                 <view>授权设置</view>
                             </view>
                         </navigator>
-                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <view bindtap="clearcache" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
                                 <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view>清除缓存</view>
                             </view>
-                        </navigator>
+                        </view>
                     </view>
                 </view>
             </view>
