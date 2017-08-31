@@ -1,4 +1,4 @@
-<view class="page-bottom {{open ? 'c-state3' : ''}}">
+<scroll-view class="page-bottom {{open ? 'c-state3' : ''}}">
     <view class="page-content">
         <navigator url="../index/index" open-type="switchTab" class="wc">
             <text>首页</text>
@@ -22,4 +22,4 @@
             <text>新闻中心</text>
         </navigator>
     </view>
-</view>
+</scroll-view>
