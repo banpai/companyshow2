@@ -1541,4 +1541,1165 @@ declare var wx: {
                     
     closeBluetoothAdapter(obj: {
         /**
-         * 成功则返回成功关闭模块
+         * 成功则返回成功关闭模块信息
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    getBluetoothAdapterState(obj: {
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    onBluetoothAdapterStateChange(callback: Function): void;
+                    
+    startBluetoothDevicesDiscovery(obj: {
+        /**
+         * 蓝牙设备主 service 的 uuid 列表
+         */
+        services?: Array<any>;
+        /**
+         * 是否允许重复上报同一设备， 如果允许重复上报，则onDeviceFound 方法会多次上报同一设备，但是 RSSI 值会有不同
+         */
+        allowDuplicatesKey?: boolean;
+        /**
+         * 上报设备的间隔，默认为0，意思是找到新设备立即上报，否则根据传入的间隔上报
+         */
+        interval?: number;
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    stopBluetoothDevicesDiscovery(obj: {
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    getBluetoothDevices(obj: {
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    onBluetoothDeviceFound(callback: Function): void;
+                    
+    getConnectedBluetoothDevices(obj: {
+        /**
+         * 蓝牙设备主 service 的 uuid 列表
+         */
+        services: Array<any>;
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    createBLEConnection(obj: {
+        /**
+         * 蓝牙设备 id，参考 getDevices 接口
+         */
+        deviceId: string;
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    closeBLEConnection(obj: {
+        /**
+         * 蓝牙设备 id，参考 getDevices 接口
+         */
+        deviceId: string;
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    getBLEDeviceServices(obj: {
+        /**
+         * 蓝牙设备 id，参考 getDevices 接口
+         */
+        deviceId: string;
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    getBLEDeviceCharacteristics(obj: {
+        /**
+         * 蓝牙设备 id，参考 device 对象
+         */
+        deviceId: string;
+        /**
+         * 蓝牙服务 uuid
+         */
+        serviceId: string;
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    readBLECharacteristicValue(obj: {
+        /**
+         * 蓝牙设备 id，参考 device 对象
+         */
+        deviceId: string;
+        /**
+         * 蓝牙特征值对应服务的 uuid
+         */
+        serviceId: string;
+        /**
+         * 蓝牙特征值的 uuid
+         */
+        characteristicId: string;
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    writeBLECharacteristicValue(obj: {
+        /**
+         * 蓝牙设备 id，参考 device 对象
+         */
+        deviceId: string;
+        /**
+         * 蓝牙特征值对应服务的 uuid
+         */
+        serviceId: string;
+        /**
+         * 蓝牙特征值的 uuid
+         */
+        characteristicId: string;
+        /**
+         * 蓝牙设备特征值对应的二进制值（注意：vConsole 无法打印出 ArrayBuffer 类型数据）
+         */
+        value: undefined;
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    notifyBLECharacteristicValueChange(obj: {
+        /**
+         * 蓝牙设备 id，参考 device 对象
+         */
+        deviceId: string;
+        /**
+         * 蓝牙特征值对应服务的 uuid
+         */
+        serviceId: string;
+        /**
+         * 蓝牙特征值的 uuid
+         */
+        characteristicId: string;
+        /**
+         * true: 启用 notify; false: 停用 notify
+         */
+        state: boolean;
+        /**
+         * 成功则返回本机蓝牙适配器状态
+         */
+        success: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    onBLEConnectionStateChange(callback: Function): void;
+                    
+    onBLECharacteristicValueChange(callback: Function): void;
+                    
+    startBeaconDiscovery(obj: {
+        /**
+         * iBeacon设备广播的 uuids
+         */
+        uuids: string[];
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    stopBeaconDiscovery(obj: {
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    getBeacons(obj: {
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    onBeaconUpdate(callback: Function): void;
+                    
+    onBeaconServiceChange(callback: Function): void;
+                    
+    onUserCaptureScreen(callback: Function): void;
+                    
+    addPhoneContact(obj: {
+        /**
+         * 头像本地文件路径
+         */
+        photoFilePath?: string;
+        /**
+         * 昵称
+         */
+        nickName?: string;
+        /**
+         * 姓氏
+         */
+        lastName?: string;
+        /**
+         * 中间名
+         */
+        middleName?: string;
+        /**
+         * 名字
+         */
+        firstName: string;
+        /**
+         * 备注
+         */
+        remark?: string;
+        /**
+         * 手机号
+         */
+        mobilePhoneNumber?: string;
+        /**
+         * 微信号
+         */
+        weChatNumber?: string;
+        /**
+         * 联系地址国家
+         */
+        addressCountry?: string;
+        /**
+         * 联系地址省份
+         */
+        addressState?: string;
+        /**
+         * 联系地址城市
+         */
+        addressCity?: string;
+        /**
+         * 联系地址街道
+         */
+        addressStreet?: string;
+        /**
+         * 联系地址邮政编码
+         */
+        addressPostalCode?: string;
+        /**
+         * 公司
+         */
+        organization?: string;
+        /**
+         * 职位
+         */
+        title?: string;
+        /**
+         * 工作传真
+         */
+        workFaxNumber?: string;
+        /**
+         * 工作电话
+         */
+        workPhoneNumber?: string;
+        /**
+         * 公司电话
+         */
+        hostNumber?: string;
+        /**
+         * 电子邮件
+         */
+        email?: string;
+        /**
+         * 网站
+         */
+        url?: string;
+        /**
+         * 工作地址国家
+         */
+        workAddressCountry?: string;
+        /**
+         * 工作地址省份
+         */
+        workAddressState?: string;
+        /**
+         * 工作地址城市
+         */
+        workAddressCity?: string;
+        /**
+         * 工作地址街道
+         */
+        workAddressStreet?: string;
+        /**
+         * 工作地址邮政编码
+         */
+        workAddressPostalCode?: string;
+        /**
+         * 住宅传真
+         */
+        homeFaxNumber?: string;
+        /**
+         * 住宅电话
+         */
+        homePhoneNumber?: string;
+        /**
+         * 住宅地址国家
+         */
+        homeAddressCountry?: string;
+        /**
+         * 住宅地址省份
+         */
+        homeAddressState?: string;
+        /**
+         * 住宅地址城市
+         */
+        homeAddressCity?: string;
+        /**
+         * 住宅地址街道
+         */
+        homeAddressStreet?: string;
+        /**
+         * 住宅地址邮政编码
+         */
+        homeAddressPostalCode?: string;
+        /**
+         * 接口调用成功
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    // # 界面 # 
+    
+    /**
+     * 显示消息提示框
+     */
+    showToast(obj: {
+        /**
+         * 提示的内容
+         */
+        title: string;
+        /**
+         * 图标，有效值 "success", "loading"
+         */
+        icon?: string;
+        /**
+         * 自定义图标的本地路径，image 的优先级高于 icon
+         */
+        image?: string;
+        /**
+         * 提示的延迟时间，单位毫秒，默认：1500
+         */
+        duration?: number;
+        /**
+         * 是否显示透明蒙层，防止触摸穿透，默认：false
+         */
+        mask?: boolean;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    showLoading(obj: {
+        /**
+         * 提示的内容
+         */
+        title: string;
+        /**
+         * 是否显示透明蒙层，防止触摸穿透，默认：false
+         */
+        mask?: boolean;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * 隐藏消息提示框
+     */
+    hideToast(): void;
+                    
+    hideLoading(): void;
+                    
+    /**
+     * ​显示模态弹窗
+     */
+    showModal(obj: {
+        /**
+         * 提示的标题
+         */
+        title: string;
+        /**
+         * 提示的内容
+         */
+        content: string;
+        /**
+         * 是否显示取消按钮，默认为 true
+         */
+        showCancel?: boolean;
+        /**
+         * 取消按钮的文字，默认为"取消"，最多 4 个字符
+         */
+        cancelText?: string;
+        /**
+         * 取消按钮的文字颜色，默认为"#000000"
+         */
+        cancelColor?: undefined;
+        /**
+         * 确定按钮的文字，默认为"确定"，最多 4 个字符
+         */
+        confirmText?: string;
+        /**
+         * 确定按钮的文字颜色，默认为"#3CC51F"
+         */
+        confirmColor?: undefined;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * ​显示操作菜单
+     */
+    showActionSheet(obj: {
+        /**
+         * 按钮的文字数组，数组长度最大为6个
+         */
+        itemList: undefined;
+        /**
+         * 按钮的文字颜色，默认为"#000000"
+         */
+        itemColor?: undefined;
+        /**
+         * 接口调用成功的回调函数，详见返回参数说明
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    setTopBarText(obj: {
+        /**
+         * 置顶栏文字内容
+         */
+        text: string;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * 动态设置当前页面的标题。
+     */
+    setNavigationBarTitle(obj: {
+        /**
+         * 页面标题
+         */
+        title: string;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * 在当前页面显示导航条加载动画。
+     */
+    showNavigationBarLoading(): void;
+                    
+    /**
+     * 隐藏导航条加载动画。
+     */
+    hideNavigationBarLoading(): void;
+                    
+    /**
+     * 保留当前页面，跳转到应用内的某个页面，使用wx.navigateBack可以返回到原页面。
+     */
+    navigateTo(obj: {
+        /**
+         * 需要跳转的应用内非 tabBar 的页面的路径 , 路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2'
+         */
+        url: string;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * 关闭当前页面，跳转到应用内的某个页面。
+     */
+    redirectTo(obj: {
+        /**
+         * 需要跳转的应用内非 tabBar 的页面的路径，路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2'
+         */
+        url: string;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    reLaunch(obj: {
+        /**
+         * 需要跳转的应用内页面路径 , 路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2'，如果跳转的页面路径是 tabBar 页面则不能带参数
+         */
+        url: string;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
+     */
+    switchTab(obj: {
+        /**
+         * 需要跳转的 tabBar 页面的路径（需在 app.json 的 tabBar 字段定义的页面），路径后不能带参数
+         */
+        url: string;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * 关闭当前页面，返回上一页面或多级页面。可通过 getCurrentPages()) 获取当前的页面栈，决定需要返回几层。
+     */
+    navigateBack(obj: {
+        /**
+         * 返回的页面数，如果 delta 大于现有页面数，则返回到首页。
+         */
+        delta?: number;
+    }): void;
+                    
+    /**
+     * 创建一个动画实例animation。调用实例的方法来描述动画。最后通过动画实例的export方法导出动画数据传递给组件的animation属性。
+     */
+    createAnimation(obj: {
+        /**
+         * 400
+         */
+        duration?: number;
+        /**
+         * "linear"
+         */
+        timingFunction?: string;
+        /**
+         * 0
+         */
+        delay?: number;
+        /**
+         * "50% 50% 0"
+         */
+        transformOrigin?: string;
+    }): IAnimation;
+                    
+    pageScrollTo(obj: {
+        /**
+         * 滚动到页面的目标位置（单位px）
+         */
+        scrollTop: number;
+    }): void;
+                    
+    /**
+     * 创建 canvas 绘图上下文（指定 canvasId）.Tip: 需要指定 canvasId，该绘图上下文只作用于对应的 <canvas/>
+     */
+    createCanvasContext(canvasId: string): ICanvasContext;
+                    
+    /**
+     * 把当前画布的内容导出生成图片，并返回文件路径
+     */
+    canvasToTempFilePath(canvasId: string): void;
+                    
+    startPullDownRefresh(obj: {
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * 停止当前页面下拉刷新。
+     */
+    stopPullDownRefresh(): void;
+                    
+    // # WXML节点信息 # 
+    
+    // # 第三方平台 # 
+    
+    getExtConfig(obj: {
+        /**
+         * 返回第三方平台自定义的数据
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    getExtConfigSync(): void;
+                    
+    // # 开放接口 # 
+    
+    /**
+     * 调用接口获取登录凭证（code）进而换取用户登录态信息，包括用户的唯一标识（openid） 及本次登录的 会话密钥（session_key）。用户数据的加解密通讯需要依赖会话密钥完成。
+     */
+    login(obj: {
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * 通过上述接口获得的用户登录态拥有一定的时效性。用户越久未使用小程序，用户登录态越有可能失效。反之如果用户一直在使用小程序，则用户登录态一直保持有效。具体时效逻辑由微信维护，对开发者透明。开发者只需要调用wx.checkSession接口检测当前用户登录态是否有效。登录态过期后开发者可以再调用wx.login获取新的用户登录态。
+     */
+    checkSession(obj: {
+        /**
+         * 接口调用成功的回调函数，登录态未过期
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数，登录态已过期
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    authorize(obj: {
+        /**
+         * 需要获取权限的scope，详见 scope 列表
+         */
+        scope: string;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * 获取用户信息，withCredentials 为 true 时需要先调用 wx.login 接口。
+     */
+    getUserInfo(obj: {
+        /**
+         * 是否带上登录态信息
+         */
+        withCredentials?: boolean;
+        /**
+         * 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文
+         */
+        lang?: string;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    /**
+     * 发起微信支付。
+     */
+    requestPayment(obj: {
+        /**
+         * 时间戳从1970年1月1日00:00:00至今的秒数,即当前的时间
+         */
+        timeStamp: string;
+        /**
+         * 随机字符串，长度为32个字符以下。
+         */
+        nonceStr: string;
+        /**
+         * 统一下单接口返回的 prepay_id 参数值，提交格式如：prepay_id=*
+         */
+        package: string;
+        /**
+         * 签名算法，暂支持 MD5
+         */
+        signType: string;
+        /**
+         * 签名,具体签名方案参见小程序支付接口文档;
+         */
+        paySign: string;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    chooseAddress(obj: {
+        /**
+         * 返回用户选择的收货地址信息
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    addCard(obj: {
+        /**
+         * 需要添加的卡券列表，列表内对象说明请参见请求对象说明
+         */
+        cardList: undefined;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    openCard(obj: {
+        /**
+         * 需要打开的卡券列表，列表内参数详见openCard 请求对象说明
+         */
+        cardList: undefined;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    openSetting(obj: {
+        /**
+         * 接口调用成功的回调函数，返回内容详见返回参数说明。
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    getSetting(obj: {
+        /**
+         * 接口调用成功的回调函数，返回内容详见返回参数说明。
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    getWeRunData(obj: {
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    navigateToMiniProgram(obj: {
+        /**
+         * 要打开的小程序 appId
+         */
+        appId: string;
+        /**
+         * 打开的页面路径，如果为空则打开首页
+         */
+        path?: string;
+        /**
+         * 需要传递给目标小程序的数据，目标小程序可在 App.onLaunch()，App.onShow() 中获取到这份数据。详情
+         */
+        extraData?: any;
+        /**
+         * 要打开的小程序版本，有效值 develop（开发版），trial（体验版），release（正式版） ，仅在当前小程序为开发版或体验版时此参数有效；如果当前小程序是体验版或正式版，则打开的小程序必定是正式版。默认值 release
+         */
+        envVersion?: string;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    chooseInvoiceTitle(obj: {
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    checkIsSupportSoterAuthentication(obj: {
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+    // # 数据 # 
+    
+    /**
+     * 自定义分析数据上报接口。使用前，需要在小程序管理后台自定义分析中新建事件，配置好事件名与字段。
+     */
+    reportAnalytics(eventName: string,  data: string, ): void;
+                    
+    // # 拓展接口 # 
+    
+    arrayBufferToBase64(arrayBuffer: string): void;
+                    
+    base64ToArrayBuffer(base64: string): void;
+                    
+    // # 调试接口 # 
+    
+    setEnableDebug(obj: {
+        /**
+         * 是否打开调试
+         */
+        enableDebug: boolean;
+        /**
+         * 接口调用成功的回调函数
+         */
+        success?: Function;
+        /**
+         * 接口调用失败的回调函数
+         */
+        fail?: Function;
+        /**
+         * 接口调用结束的回调函数（调用成功、失败都会执行）
+         */
+        complete?: Function;
+    }): void;
+                    
+}

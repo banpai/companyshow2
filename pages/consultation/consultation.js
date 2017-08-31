@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp()
-var sliderWidth = 130; // 需要设置slider的宽度，用于计算中间位置
+var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 
 //调用ajax
 const ajax = require('../../utils/util.js').ajax
