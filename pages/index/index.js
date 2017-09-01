@@ -9,33 +9,23 @@ const ajax = require('../../utils/util.js').ajax
 
 //订单取消的接口
 const index_api = require('../../config').index_api
+const index2_api = require('../../config').index2_api
 const newslist_api = require('../../config').newslist_api
 
 Page({
   data: {
+    data: {},
     markers: [{
-      iconPath: "../../image/company.png",
+      iconPath: "",
       id: 0,
-      latitude: 23.099994,
-      longitude: 113.324520,
-      width: 200,
-      height: 30
-    }],
-    polyline: [{
-      points: [{
-        longitude: 113.3245211,
-        latitude: 23.10229
-      }, {
-        longitude: 113.324520,
-        latitude: 23.21229
-      }],
-      color:"#FF0000DD",
-      width: 2,
-      dottedLine: true
+      latitude: 120.281242,
+      longitude: 31.477887,
+      width: 50,
+      height: 50
     }],
     controls: [{
       id: 1,
-      iconPath: '',
+      iconPath: '/resources/location.png',
       position: {
         left: 0,
         top: 300 - 50,
@@ -84,8 +74,18 @@ Page({
         })
       }
     });
-    var that = this;
-    console.log(JSON.stringify(app.globalData));
+    //获取数据
+    ajax(index2_api, {}, function (m) {
+      console.log(JSON.stringify(m));
+      var latitude = Number(m.about.latitude);
+      var longitude = Number(m.about.longitude);
+      console.log(latitude);
+      console.log(longitude);
+      that.setData({
+        data: m
+      });
+    });
+
     if (app.globalData.m) {
       that.setData({
         m: app.globalData.m
@@ -121,18 +121,18 @@ Page({
     this.setData({
       open: flag
     });
-    if(this.data.open){
-      setTimeout(function(){
-        var state2 =  'width: ' + that.data.width2 + 'px !important;';
+    if (this.data.open) {
+      setTimeout(function () {
+        var state2 = 'width: ' + that.data.width2 + 'px !important;';
         state2 = state2 + 'height: ' + that.data.height + 'px !important';
         that.setData({
           state2: state2
         })
       }, 500);
-    }else{
-      setTimeout(function(){
-        var state2 =  'width: ' + that.data.width3 + 'px !important;';
-        var state3 =  'width: ' + that.data.width3 + 'px !important;overflow: hidden;';
+    } else {
+      setTimeout(function () {
+        var state2 = 'width: ' + that.data.width3 + 'px !important;';
+        var state3 = 'width: ' + that.data.width3 + 'px !important;overflow: hidden;';
         that.setData({
           state3: state3,
           state2: state2
