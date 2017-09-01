@@ -95,7 +95,7 @@ Page({
     } else {
       //获取数据,
       ajax(index2_api, {}, function (m) {
-        console.log(JSON.stringify(m));
+        console.log(JSON.stringify(m.news));
         var latitude = Number(m.about.latitude);
         var longitude = Number(m.about.longitude);
         that.setData({

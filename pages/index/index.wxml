@@ -141,7 +141,7 @@
       </view>
       <!--标题栏 end-->
       <view style="clear: both;height: 15px;background: #fff;"></view>
-      <view class="weui-cell" wx:for="data.news" wx:key="news">
+      <view class="weui-cell" wx:for="{{data.news}}" wx:key="news">
         <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
           <image src="{{item.thumb}}" style="width: 50px; height: 50px; display: block" />
         </view>
@@ -186,7 +186,6 @@
     <!--联系我们 end-->
 
     <view class="bgtpd" style="{{width}}"></view>
-
     <!--留言板 start-->
 
     <!--标题栏 start-->

@@ -1,7 +1,7 @@
 @import 'utils/weui.wxss';
 @import 'template/menuslid/menuslid.wxss';
 @import 'template/topcartoon/topcartoon.wxss';
-@import "/wxParse/wxParse.wxss";
+/* @import "/wxParse/wxParse.wxss"; */
 /**app.wxss**/
 page {
   background: #fff;
@@ -175,6 +175,7 @@ button::after {
 .aboutus .au_cover .bp_kk .t1_bp {
   color: #fff;
   width: 200px;
+  overflow:visible;  
 }
 .aboutus .au_cover .t2_bp {
   font-size: 14px;

@@ -1,0 +1,4 @@
+@import "../../wxParse/wxParse.wxss";
+.sus-h2{
+    color: red;
+}

@@ -161,6 +161,7 @@ button::after {
 }
 .aboutus .au_cover .bp_kk .t1_bp {
   color: #fff;
+  overflow: visible !important;
   width: 200px;
 }
 .aboutus .au_cover .t2_bp {

@@ -1,9 +1,9 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/wxparse/wxparse",
     "pages/prodisplay/prodisplay",
     "pages/aboutus/aboutus",
-    "pages/article/article",
     "pages/exmdisplay/exmdisplay",
     "pages/connectus/connectus",
     "pages/joinus/joinus",
