@@ -15,11 +15,13 @@ const newslist_api = require('../../config').newslist_api
 Page({
   data: {
     data: {},
+    latitude: 31.477887,
+    longitude: 120.281242,
     markers: [{
       iconPath: "",
       id: 0,
-      latitude: 120.281242,
-      longitude: 31.477887,
+      latitude: 31.477887,
+      longitude: 120.281242,
       width: 50,
       height: 50
     }],
@@ -74,42 +76,41 @@ Page({
         })
       }
     });
-    //获取数据
-    ajax(index2_api, {}, function (m) {
-      console.log(JSON.stringify(m));
-      var latitude = Number(m.about.latitude);
-      var longitude = Number(m.about.longitude);
-      console.log(latitude);
-      console.log(longitude);
+    if (app.globalData.data) {
+      var latitude = Number(app.globalData.data.about.latitude);
+      var longitude = Number(app.globalData.data.about.longitude);
       that.setData({
-        data: m
-      });
-    });
-
-    if (app.globalData.m) {
-      that.setData({
-        m: app.globalData.m
+        m: app.globalData.data,
+        latitude: latitude,
+        longitude: longitude,
+        markers: [{
+          iconPath: "",
+          id: 0,
+          latitude: latitude,
+          longitude: longitude,
+          width: 50,
+          height: 50
+        }]
       });
     } else {
-      //获取数据
-      ajax(index_api, {}, function (m) {
+      //获取数据,
+      ajax(index2_api, {}, function (m) {
+        console.log(JSON.stringify(m));
+        var latitude = Number(m.about.latitude);
+        var longitude = Number(m.about.longitude);
         that.setData({
-          m: m
+          data: m,
+          latitude: latitude,
+          longitude: longitude,
+          markers: [{
+            iconPath: "",
+            id: 0,
+            latitude: latitude,
+            longitude: longitude,
+            width: 50,
+            height: 50
+          }]
         });
-        app.globalData.m = m;
-      });
-    }
-    if (app.globalData.pic) {
-      that.setData({
-        pic: app.globalData.pic
-      });
-    } else {
-      //获取数据
-      ajax(newslist_api, {}, function (m) {
-        that.setData({
-          pic: m
-        });
-        app.globalData.pic = m;
       });
     }
   },

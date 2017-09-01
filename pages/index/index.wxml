@@ -11,10 +11,10 @@
     <!--顶部banner图片 start-->
     <view class="top_img" style="{{width}}">
       <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
+        <block wx:for="{{data.banner}}" wx:key="banner">
           <swiper-item>
-            <view class="swiper-item {{item}}">
-              <image class="ic" src="{{m.flash}}" style="width: 100%;" />
+            <view class="swiper-item">
+              <image class="ic" src="{{item.thumb}}" style="width: 100%;" />
             </view>
           </swiper-item>
         </block>
@@ -73,14 +73,14 @@
 
     <!--关于我们 start-->
     <view class="aboutus" style="{{width}}">
-      <image class="ic" src="{{m.flash}}" style="width: 100%;" />
+      <image class="ic" src="{{data.about.descimgs[0]}}" style="width: 100%;" />
       <view class="au_cover">
         <!--标题栏 start-->
         <view class="bp_kk">
           <view class="t1_bp">关于我们</view>
         </view>
         <!--标题栏 end-->
-        <view class="t2_bp">米尔网络微信小程序专家</view>
+        <view class="t2_bp">{{data.about.info1}}</view>
         <!--了解更多按钮 start-->
         <view class="seemore">了解更多</view>
         <!--了解更多按钮 end-->
@@ -97,7 +97,7 @@
         <view class="t1_bp">产品展示</view>
       </view>
       <!--标题栏 end-->
-      <view class="tu" wx:for="{{pic}}" wx:key="">
+      <view class="tu" wx:for="{{data.goods}}" wx:key="goods">
         <view class="tb">
           <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
           <view class="textsj">{{ item.title }}</view>
@@ -119,13 +119,7 @@
         <view class="t1_bp">案列展示</view>
       </view>
       <!--标题栏 end-->
-      <view class="tu" wx:for="{{pic}}" wx:key="">
-        <view class="tb">
-          <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
-          <view class="textsj">{{ item.title }}</view>
-        </view>
-      </view>
-      <view class="tu" wx:for="{{pic}}" wx:key="">
+      <view class="tu" wx:for="{{data.engine}}" wx:key="engine">
         <view class="tb">
           <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
           <view class="textsj">{{ item.title }}</view>
@@ -147,28 +141,12 @@
       </view>
       <!--标题栏 end-->
       <view style="clear: both;height: 15px;background: #fff;"></view>
-      <view class="weui-cell">
+      <view class="weui-cell" wx:for="data.news" wx:key="news">
         <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-          <image src="{{m.flash}}" style="width: 50px; height: 50px; display: block" />
+          <image src="{{item.thumb}}" style="width: 50px; height: 50px; display: block" />
         </view>
         <view class="weui-cell__bd">
-          <view style="font-size: 16px;color: #888888;">摘要信息</view>
-        </view>
-      </view>
-      <view class="weui-cell">
-        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-          <image src="{{m.flash}}" style="width: 50px; height: 50px; display: block" />
-        </view>
-        <view class="weui-cell__bd">
-          <view style="font-size: 16px;color: #888888;">摘要信息</view>
-        </view>
-      </view>
-      <view class="weui-cell">
-        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-          <image src="{{m.flash}}" style="width: 50px; height: 50px; display: block" />
-        </view>
-        <view class="weui-cell__bd">
-          <view style="font-size: 16px;color: #888888;">摘要信息</view>
+          <view style="font-size: 16px;color: #888888;">{{item.title}}</view>
         </view>
       </view>
     </view>
@@ -187,7 +165,7 @@
     <!--标题栏 end-->
 
     <!--地图展示 start-->
-    <map id="map" longitude="120.281242" latitude="31.477887" scale="14" controls="{{controls}}" bindcontroltap="controltap"
+    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap"
       markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width:{{mapwidth}}px;"></map>
     <!--地图展示 end-->
     <view class="page__title">{{data.about.name}}</view>
@@ -202,7 +180,7 @@
       </view>
       <view class="weui-form-preview__item">
         <view class="weui-form-preview__label">手机</view>
-        <view class="weui-form-preview__value">{{data.about.tel}}</view>
+        <view class="weui-form-preview__value">{{data.about.phone}}</view>
       </view>
     </view>
     <!--联系我们 end-->

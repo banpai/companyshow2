@@ -10,6 +10,7 @@ const ajax = require('../../utils/util.js').ajax
 //订单取消的接口
 const index_api = require('../../config').index_api
 const newslist_api = require('../../config').newslist_api
+const goods2_api = require('../../config').goods2_api
 
 Page({
   data: {
@@ -86,33 +87,14 @@ Page({
       }
     });
     var that = this;
-    console.log(JSON.stringify(app.globalData));
-    if (app.globalData.m) {
-      that.setData({
-        m: app.globalData.m
-      });
-    } else {
-      //获取数据
-      ajax(index_api, {}, function (m) {
-        that.setData({
-          m: m
-        });
-        app.globalData.m = m;
-      });
-    }
-    if (app.globalData.pic) {
-      that.setData({
-        pic: app.globalData.pic
-      });
-    } else {
-      //获取数据
-      ajax(newslist_api, {}, function (m) {
-        that.setData({
-          pic: m
-        });
-        app.globalData.pic = m;
-      });
-    }
+    var data = {
+      gid: 0
+    };
+    var postdata = JSON.stringify(data);
+    //获取產品展示数据
+    ajax(goods2_api, postdata, function (m) {
+        console.log(m);
+    });
   },
   //侧边栏滑动
   tap_ch: function () {
@@ -140,13 +122,6 @@ Page({
         })
       }, 500);
     }
-  },
-  //拨打电话
-  tel: function () {
-    var that = this;
-    wx.makePhoneCall({
-      phoneNumber: that.data.m.tel
-    });
   },
   //查看图片
   showimg: function (e) {

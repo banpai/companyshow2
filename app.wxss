@@ -1,6 +1,7 @@
 @import 'utils/weui.wxss';
 @import 'template/menuslid/menuslid.wxss';
 @import 'template/topcartoon/topcartoon.wxss';
+@import "/wxParse/wxParse.wxss";
 /**app.wxss**/
 page {
   background: #fff;
