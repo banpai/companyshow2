@@ -19,7 +19,7 @@
       <!--标题栏 end-->
       <view class="tu" wx:for="{{pic}}" wx:key="" style="width: {{lenwidth}}px;">
         <view class="tb">
-          <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
+          <navigator url="../wxparse/wxparse" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></navigator>
           <view class="textsj">{{ item.title }}</view>
         </view>
       </view>

@@ -6,10 +6,11 @@ var jsdx;
 
 //调用ajax
 const ajax = require('../../utils/util.js').ajax
+const tusi = require('../../utils/util.js').tusi
+const ceslid = require('../../utils/util.js').ceslid
+
 
 //订单取消的接口
-const index_api = require('../../config').index_api
-const newslist_api = require('../../config').newslist_api
 const goods2_api = require('../../config').goods2_api
 
 Page({
@@ -70,58 +71,15 @@ Page({
   },
   onLoad: function () {
     var that = this;
-    //重新获取高度
-    wx.getSystemInfo({
-      success: function (res) {
-        var width = "width:" + res.windowWidth + 'px;';
-        var width2 = +res.windowWidth - 202;
-        var height = res.windowHeight - 2;
-        var mapwidth = +res.windowWidth - 30;
-        that.setData({
-          width: width,
-          width2: width2,
-          width3: res.windowWidth,
-          height: height,
-          mapwidth: mapwidth
-        })
-      }
-    });
-    var that = this;
+    ceslid(that);
     var data = {
-      gid: "0"
+      gid: "1"
     };
     var postdata = JSON.stringify(data);
     //获取產品展示数据
     ajax(goods2_api, postdata, function (m) {
         console.log(m);
     }, true);
-  },
-  //侧边栏滑动
-  tap_ch: function () {
-    console.log(11);
-    var that = this;
-    var flag = !this.data.open;
-    this.setData({
-      open: flag
-    });
-    if (this.data.open) {
-      setTimeout(function () {
-        var state2 = 'width: ' + that.data.width2 + 'px !important;';
-        state2 = state2 + 'height: ' + that.data.height + 'px !important';
-        that.setData({
-          state2: state2
-        })
-      }, 500);
-    } else {
-      setTimeout(function () {
-        var state2 = 'width: ' + that.data.width3 + 'px !important;';
-        var state3 = 'width: ' + that.data.width3 + 'px !important;overflow: hidden;';
-        that.setData({
-          state3: state3,
-          state2: state2
-        })
-      }, 500);
-    }
   },
   //查看图片
   showimg: function (e) {

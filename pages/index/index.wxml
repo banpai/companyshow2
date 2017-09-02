@@ -100,7 +100,8 @@
       <!--标题栏 end-->
       <view class="tu" wx:for="{{data.goods}}" wx:key="goods" style="width: {{lenwidth}}px;">
         <view class="tb">
-          <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
+          <navigator url="../wxparse/wxparse" class="ic" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}">
+          </navigator>
           <view class="textsj">{{ item.title }}</view>
         </view>
       </view>
@@ -122,7 +123,7 @@
       <!--标题栏 end-->
       <view class="tu" wx:for="{{data.engine}}" wx:key="engine" style="width: {{lenwidth}}px;">
         <view class="tb">
-          <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
+          <navigator url="../wxparse/wxparse" class="ic" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;"></navigator>
           <view class="textsj">{{ item.title }}</view>
         </view>
       </view>
