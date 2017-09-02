@@ -1,6 +1,6 @@
 <!--关于我们 start-->
 <view class="aboutus" style="{{width}}">
-    <image class="ic" src="{{m.flash}}" style="width: 100%;" />
+    <image class="ic" src="{{picc}}" style="width: 100%;" />
     <view class="au_cover">
         <text class="gywm">{{title}}</text>
     </view>

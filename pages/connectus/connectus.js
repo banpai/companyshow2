@@ -70,9 +70,15 @@ Page({
     var that = this;
     ceslid(this);
     if (app.globalData.data) {
+      that.setData({
+        picc: app.globalData.data.about.descimgs[0]
+      });
+    }
+    if (app.globalData.data) {
       var latitude = Number(app.globalData.data.about.latitude);
       var longitude = Number(app.globalData.data.about.longitude);
       that.setData({
+        data: app.globalData.data,
         m: app.globalData.data,
         latitude: latitude,
         longitude: longitude,

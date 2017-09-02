@@ -69,6 +69,11 @@ Page({
   onLoad: function () {
     var that = this;
     ceslid(that);
+    if (app.globalData.data) {
+      that.setData({
+        picc: app.globalData.data.about.descimgs[1]
+      });
+    }
     var data = {
       op: "goods"
     };

@@ -70,6 +70,7 @@ Page({
       var latitude = Number(app.globalData.data.about.latitude);
       var longitude = Number(app.globalData.data.about.longitude);
       that.setData({
+        data: app.globalData.data,
         m: app.globalData.data,
         latitude: latitude,
         longitude: longitude,
@@ -88,6 +89,7 @@ Page({
         console.log(JSON.stringify(m.news));
         var latitude = Number(m.about.latitude);
         var longitude = Number(m.about.longitude);
+        app.globalData.data = m;
         that.setData({
           data: m,
           latitude: latitude,
