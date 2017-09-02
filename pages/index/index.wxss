@@ -65,10 +65,8 @@ swiper {
   border-right: 7px solid #fff;
 }
 .cptp .tu {
-  width: 50%;
   float: left;
   height: 207px;
-  overflow: hidden;
 }
 .cptp .tu .tb {
   background: #fff;

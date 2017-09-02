@@ -4,7 +4,8 @@
   <include src="../../template/menuslid/header.wxml" />
 
 
-  <view class="page-top {{open ? 'c-state1' : ''}}" style="{{open ? state2 : state3}}">
+  <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? 'c-state1' : ''}}">
+  <!-- <view class="page-top {{open ? 'c-state1' : ''}}" style="{{open ? state2 : state3}}"> -->
 
     <include src="../../template/menuslid/body.wxml" />
 
@@ -91,13 +92,13 @@
     <view class="bgtpd" style="{{width}}"></view>
 
     <!--产品展示 start-->
-    <view class="cptp">
+    <view class="cptp" style="width:{{width3 - 14}}px;">
       <!--标题栏 start-->
       <view class="bp_kk">
         <view class="t1_bp">产品展示</view>
       </view>
       <!--标题栏 end-->
-      <view class="tu" wx:for="{{data.goods}}" wx:key="goods">
+      <view class="tu" wx:for="{{data.goods}}" wx:key="goods" style="width: {{lenwidth}}px;">
         <view class="tb">
           <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
           <view class="textsj">{{ item.title }}</view>
@@ -113,13 +114,13 @@
     <view class="bgtpd" style="{{width}}"></view>
 
     <!--案列展示 start-->
-    <view class="cptp">
+    <view class="cptp" style="width:{{width3 - 14}}px;">
       <!--标题栏 start-->
       <view class="bp_kk">
         <view class="t1_bp">案列展示</view>
       </view>
       <!--标题栏 end-->
-      <view class="tu" wx:for="{{data.engine}}" wx:key="engine">
+      <view class="tu" wx:for="{{data.engine}}" wx:key="engine" style="width: {{lenwidth}}px;">
         <view class="tb">
           <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
           <view class="textsj">{{ item.title }}</view>
@@ -199,7 +200,7 @@
           <view class="weui-label">手机号</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请输入手机号" />
+          <input class="weui-input" placeholder="请输入手机号"  type="number" bindinput="tel" value="{{tel}}" />
         </view>
       </view>
       <view class="weui-cell weui-cell_input">
@@ -207,7 +208,7 @@
           <view class="weui-label">邮箱</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请输入邮箱" />
+          <input class="weui-input" placeholder="请输入邮箱"  bindinput="emai" value="{{emai}}" />
         </view>
       </view>
     </view>
@@ -215,7 +216,7 @@
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd">
-          <textarea class="weui-textarea" placeholder="请输入您的建议" style="height: 3.3em" />
+          <textarea class="weui-textarea" placeholder="请输入您的建议" style="height: 3.3em"  bindinput="desc" value="{{desc}}" />
         </view>
       </view>
     </view>
@@ -228,7 +229,6 @@
     <!--留言板 end-->
 
     <view class="footerb"></view>
-
-
+     
   </view>
 </view>

@@ -6,6 +6,7 @@ var jsdx;
 
 //调用ajax
 const ajax = require('../../utils/util.js').ajax
+const tusi = require('../../utils/util.js').tusi
 
 //订单取消的接口
 const index_api = require('../../config').index_api
@@ -14,7 +15,15 @@ const newslist_api = require('../../config').newslist_api
 
 Page({
   data: {
+    open : false,
+    mark: 0,
+    newmark: 0,
+    istoright:true,
+    tel:'',
+    emai:"",
+    desc:'',
     data: {},
+    lenwidth: 166,
     latitude: 31.477887,
     longitude: 120.281242,
     markers: [{
@@ -40,7 +49,6 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     width: '',
-    open: false,
     speed: 0,
     state1: '',
     state2: '',
@@ -67,12 +75,15 @@ Page({
         var width2 = +res.windowWidth - 202;
         var height = res.windowHeight - 2;
         var mapwidth = +res.windowWidth - 30;
+        var lenwidth = (+res.windowWidth - 14)/2;
+        console.log(lenwidth);
         that.setData({
           width: width,
           width2: width2,
           width3: res.windowWidth,
           height: height,
-          mapwidth: mapwidth
+          mapwidth: mapwidth,
+          lenwidth: lenwidth
         })
       }
     });
@@ -115,32 +126,32 @@ Page({
     }
   },
   //侧边栏滑动
-  tap_ch: function () {
-    console.log(11);
-    var that = this;
-    var flag = !this.data.open;
-    this.setData({
-      open: flag
-    });
-    if (this.data.open) {
-      setTimeout(function () {
-        var state2 = 'width: ' + that.data.width2 + 'px !important;';
-        state2 = state2 + 'height: ' + that.data.height + 'px !important';
-        that.setData({
-          state2: state2
-        })
-      }, 500);
-    } else {
-      setTimeout(function () {
-        var state2 = 'width: ' + that.data.width3 + 'px !important;';
-        var state3 = 'width: ' + that.data.width3 + 'px !important;overflow: hidden;';
-        that.setData({
-          state3: state3,
-          state2: state2
-        })
-      }, 500);
-    }
-  },
+  // tap_ch: function () {
+  //   console.log(11);
+  //   var that = this;
+  //   var flag = !this.data.open;
+  //   this.setData({
+  //     open: flag
+  //   });
+  //   if (this.data.open) {
+  //     setTimeout(function () {
+  //       var state2 = 'width: ' + that.data.width2 + 'px !important;';
+  //       state2 = state2 + 'height: ' + that.data.height + 'px !important';
+  //       that.setData({
+  //         state2: state2
+  //       })
+  //     }, 500);
+  //   } else {
+  //     setTimeout(function () {
+  //       var state2 = 'width: ' + that.data.width3 + 'px !important;';
+  //       var state3 = 'width: ' + that.data.width3 + 'px !important;overflow: hidden;';
+  //       that.setData({
+  //         state3: state3,
+  //         state2: state2
+  //       })
+  //     }, 500);
+  //   }
+  // },
   //拨打电话
   tel: function () {
     var that = this;
@@ -185,5 +196,85 @@ Page({
   },
   controltap(e) {
     console.log(e.controlId)
+  },
+  //电话
+  tel: function (e) {
+    this.setData({
+      tel: e.detail.value
+    })
+  },
+   //邮箱
+   emai: function (e) {
+    this.setData({
+      emai: e.detail.value
+    })
+  },
+   //建议
+   desc: function (e) {
+    this.setData({
+      desc: e.detail.value
+    })
+  },
+  //提交按钮
+  showTopTips:function(){
+    var that = this;
+    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+    if ( that.data.tel === '') {
+      tusi('请填写手机号');
+    } else if (!myreg.test(that.data.tel)) {
+      tusi('手机号码错误');
+    } else if (that.data.emai === '') {
+      tusi('请输入邮箱');
+    } else if (that.data.desc === '') {
+      tusi('请输入您的建议');
+    } else {
+      var data = {
+        tel: that.data.tel,
+        emai: that.data.emai,
+        desc: that.data.desc
+      }
+      console.log(data);
+    }
+    
+  },
+  tap_ch: function(e){
+    if(this.data.open){
+      this.setData({
+        open : false
+      });
+    }else{
+      this.setData({
+        open : true
+      });
+    }
+  },
+  tap_start:function(e){
+    // touchstart事件
+    this.data.mark = this.data.newmark = e.touches[0].pageX;
+  },
+  tap_drag: function(e){
+    // touchmove事件
+
+    /*
+     * 手指从左向右移动
+     * @newmark是指移动的最新点的x轴坐标 ， @mark是指原点x轴坐标
+     */
+    this.data.newmark = e.touches[0].pageX;
+    if(this.data.mark < this.data.newmark){
+      this.istoright = true;
+    }
+    /*
+     * 手指从右向左移动
+     * @newmark是指移动的最新点的x轴坐标 ， @mark是指原点x轴坐标
+     */
+    if(this.data.mark > this.data.newmark){
+      this.istoright = false;
+
+    }
+    this.data.mark = this.data.newmark;
+
+  },
+  tap_end: function(e){
+
   }
 })

@@ -88,13 +88,13 @@ Page({
     });
     var that = this;
     var data = {
-      gid: 0
+      gid: "0"
     };
     var postdata = JSON.stringify(data);
     //获取產品展示数据
     ajax(goods2_api, postdata, function (m) {
         console.log(m);
-    });
+    }, true);
   },
   //侧边栏滑动
   tap_ch: function () {

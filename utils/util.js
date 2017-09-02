@@ -54,7 +54,26 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+//封装tusi
+function tusi(str, flag, fun) {
+  var icon = 'loading';
+  if (flag) {
+    icon = 'success';
+  }
+  wx.showToast({
+    title: str,
+    icon: icon,
+    duration: 1500,
+    complete: function () {
+      if (fun) {
+        fun();
+      }
+    }
+  });
+}
+
 module.exports = {
   formatTime: formatTime,
-  ajax: ajax
+  ajax: ajax,
+  tusi: tusi
 }
