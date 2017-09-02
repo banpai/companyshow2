@@ -1,5 +1,5 @@
   <!--添加遮罩层 start-->
-  <view class="zhc {{open ? 'c-state2' : ''}}" style="{{open ? state2 : state3}}" bindtap="tap_ch"></view>
+  <view class="zhc {{open ? 'c-state2' : ''}}" style="{{open ? state2 : state3}};height: {{screenHeight}} px;position: fixed;" bindtap="tap_ch"></view>
   <!--添加遮罩层 end-->
 
   <!--头部loge按钮 start-->

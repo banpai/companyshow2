@@ -72,8 +72,75 @@ function tusi(str, flag, fun) {
   });
 }
 
+//封装侧边栏滑动
+function ceslid(that){
+  // var that = this;
+  //重新获取高度
+  wx.getSystemInfo({
+    success: function (res) {
+      var width = "width:" + res.windowWidth + 'px;';
+      var width2 = +res.windowWidth - 202;
+      var height = res.windowHeight - 2;
+      var mapwidth = +res.windowWidth - 30;
+      var lenwidth = (+res.windowWidth - 14)/2;
+      var screenHeight = res.windowWidth;
+      console.log(screenHeight + '===dsd');
+      that.setData({
+        width: width,
+        width2: width2,
+        width3: res.windowWidth,
+        height: height,
+        mapwidth: mapwidth,
+        lenwidth: lenwidth,
+        screenHeight: screenHeight
+      })
+    }
+  });
+  that.tap_ch = function(e){
+    if(this.data.open){
+      this.setData({
+        open : false
+      });
+    }else{
+      this.setData({
+        open : true
+      });
+    }
+  };
+  that.tap_start = function(e){
+    // touchstart事件
+    this.data.mark = this.data.newmark = e.touches[0].pageX;
+  };
+  that.tap_drag = function(e){
+    // touchmove事件
+
+    /*
+     * 手指从左向右移动
+     * @newmark是指移动的最新点的x轴坐标 ， @mark是指原点x轴坐标
+     */
+    this.data.newmark = e.touches[0].pageX;
+    if(this.data.mark < this.data.newmark){
+      this.istoright = true;
+    }
+    /*
+     * 手指从右向左移动
+     * @newmark是指移动的最新点的x轴坐标 ， @mark是指原点x轴坐标
+     */
+    if(this.data.mark > this.data.newmark){
+      this.istoright = false;
+
+    }
+    this.data.mark = this.data.newmark;
+
+  },
+  that.tap_end = function(e){
+
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   ajax: ajax,
-  tusi: tusi
+  tusi: tusi,
+  ceslid: ceslid
 }

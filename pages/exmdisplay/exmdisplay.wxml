@@ -11,19 +11,13 @@
     <include src="../../template/topcartoon/header.wxml" />
 
     <!--产品展示 start-->
-    <view class="cptp">
+    <view class="cptp" style="width:{{width3 - 14}}px;">
       <!--标题栏 start-->
       <view class="bp_kk">
         <view class="t1_bp">案列展示</view>
       </view>
       <!--标题栏 end-->
-      <view class="tu" wx:for="{{pic}}" wx:key="">
-        <view class="tb">
-          <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
-          <view class="textsj">{{ item.title }}</view>
-        </view>
-      </view>
-      <view class="tu" wx:for="{{pic}}" wx:key="">
+      <view class="tu" wx:for="{{pic}}" wx:key="" style="width: {{lenwidth}}px;">
         <view class="tb">
           <view class="ic" bindtap="showimg" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></view>
           <view class="textsj">{{ item.title }}</view>
