@@ -12,7 +12,8 @@
     "pages/personal/personal",
     "pages/set/set",
     "pages/consultationlist/consultationlist",
-    "pages/edit/edit"
+    "pages/edit/edit",
+    "pages/editzx/editzx"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -47,5 +48,5 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": false
+  "debug": true
 }

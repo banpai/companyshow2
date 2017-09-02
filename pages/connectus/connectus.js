@@ -6,10 +6,9 @@ var jsdx;
 
 //调用ajax
 const ajax = require('../../utils/util.js').ajax
-
-//订单取消的接口
-const index_api = require('../../config').index_api
-const newslist_api = require('../../config').newslist_api
+const tusi = require('../../utils/util.js').tusi
+const ceslid = require('../../utils/util.js').ceslid
+const index2_api = require('../../config').index2_api
 
 Page({
   data: {
@@ -69,76 +68,43 @@ Page({
   },
   onLoad: function () {
     var that = this;
-    //重新获取高度
-    wx.getSystemInfo({
-      success: function (res) {
-        var width = "width:" + res.windowWidth + 'px;';
-        var width2 = +res.windowWidth - 202;
-        var height = res.windowHeight - 2;
-        var mapwidth = +res.windowWidth - 30;
-        that.setData({
-          width: width,
-          width2: width2,
-          width3: res.windowWidth,
-          height: height,
-          mapwidth: mapwidth
-        })
-      }
-    });
-    var that = this;
-    console.log(JSON.stringify(app.globalData));
-    if (app.globalData.m) {
+    ceslid(this);
+    if (app.globalData.data) {
+      var latitude = Number(app.globalData.data.about.latitude);
+      var longitude = Number(app.globalData.data.about.longitude);
       that.setData({
-        m: app.globalData.m
+        m: app.globalData.data,
+        latitude: latitude,
+        longitude: longitude,
+        markers: [{
+          iconPath: "",
+          id: 0,
+          latitude: latitude,
+          longitude: longitude,
+          width: 50,
+          height: 50
+        }]
       });
     } else {
-      //获取数据
-      ajax(index_api, {}, function (m) {
+      //获取数据,
+      ajax(index2_api, {}, function (m) {
+        console.log(JSON.stringify(m.news));
+        var latitude = Number(m.about.latitude);
+        var longitude = Number(m.about.longitude);
         that.setData({
-          m: m
+          data: m,
+          latitude: latitude,
+          longitude: longitude,
+          markers: [{
+            iconPath: "",
+            id: 0,
+            latitude: latitude,
+            longitude: longitude,
+            width: 50,
+            height: 50
+          }]
         });
-        app.globalData.m = m;
       });
-    }
-    if (app.globalData.pic) {
-      that.setData({
-        pic: app.globalData.pic
-      });
-    } else {
-      //获取数据
-      ajax(newslist_api, {}, function (m) {
-        that.setData({
-          pic: m
-        });
-        app.globalData.pic = m;
-      });
-    }
-  },
-  //侧边栏滑动
-  tap_ch: function () {
-    console.log(11);
-    var that = this;
-    var flag = !this.data.open;
-    this.setData({
-      open: flag
-    });
-    if (this.data.open) {
-      setTimeout(function () {
-        var state2 = 'width: ' + that.data.width2 + 'px !important;';
-        state2 = state2 + 'height: ' + that.data.height + 'px !important';
-        that.setData({
-          state2: state2
-        })
-      }, 500);
-    } else {
-      setTimeout(function () {
-        var state2 = 'width: ' + that.data.width3 + 'px !important;';
-        var state3 = 'width: ' + that.data.width3 + 'px !important;overflow: hidden;';
-        that.setData({
-          state3: state3,
-          state2: state2
-        })
-      }, 500);
     }
   },
   //拨打电话

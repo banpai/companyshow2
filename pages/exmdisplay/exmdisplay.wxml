@@ -17,17 +17,15 @@
         <view class="t1_bp">案列展示</view>
       </view>
       <!--标题栏 end-->
-      <view class="tu" wx:for="{{pic}}" wx:key="" style="width: {{lenwidth}}px;">
+      <view class="tu" wx:for="{{data}}" wx:key="" style="width: {{lenwidth}}px;">
         <view class="tb">
-          <navigator url="../wxparse/wxparse" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}"></navigator>
+          <navigator url="../wxparse/wxparse?id={{item.id}}&type=engine2_api" class="ic" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;"></navigator>
           <view class="textsj">{{ item.title }}</view>
         </view>
       </view>
     </view>
     <view style="clear: both;height: 1px;background: #fff;"></view>
     <!--产品展示 end-->
-
-    <view class="footerb"></view>
 
 
   </view>

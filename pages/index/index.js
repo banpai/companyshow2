@@ -8,11 +8,7 @@ var jsdx;
 const ajax = require('../../utils/util.js').ajax
 const tusi = require('../../utils/util.js').tusi
 const ceslid = require('../../utils/util.js').ceslid
-
-//订单取消的接口
-const index_api = require('../../config').index_api
 const index2_api = require('../../config').index2_api
-const newslist_api = require('../../config').newslist_api
 
 Page({
   data: {
@@ -191,5 +187,13 @@ Page({
       }
       console.log(data);
     }
+  },
+  //新闻
+  newsskip:function(e){
+    console.log(e.currentTarget.dataset.id);
+    var url = "../wxparse/wxparse?id="+e.currentTarget.dataset.id+"&type=news2_api";
+    wx.navigateTo({
+      url: url
+    })
   }
 })

@@ -8,10 +8,7 @@ var jsdx;
 const ajax = require('../../utils/util.js').ajax
 const tusi = require('../../utils/util.js').tusi
 const ceslid = require('../../utils/util.js').ceslid
-
-
-//订单取消的接口
-const goods2_api = require('../../config').goods2_api
+const list2_api = require('../../config').list2_api
 
 Page({
   data: {
@@ -73,12 +70,14 @@ Page({
     var that = this;
     ceslid(that);
     var data = {
-      gid: "1"
+      op: "goods"
     };
     var postdata = JSON.stringify(data);
     //获取產品展示数据
-    ajax(goods2_api, postdata, function (m) {
-        console.log(m);
+    ajax(list2_api, postdata, function (m) {
+        that.setData({
+          data: m
+        });
     }, true);
   },
   //查看图片

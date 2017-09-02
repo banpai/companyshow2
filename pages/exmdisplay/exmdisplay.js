@@ -6,11 +6,9 @@ var jsdx;
 
 //调用ajax
 const ajax = require('../../utils/util.js').ajax
+const tusi = require('../../utils/util.js').tusi
 const ceslid = require('../../utils/util.js').ceslid
-
-//订单取消的接口
-const index_api = require('../../config').index_api
-const newslist_api = require('../../config').newslist_api
+const list2_api = require('../../config').list2_api
 
 Page({
   data: {
@@ -71,33 +69,16 @@ Page({
   onLoad: function () {
     var that = this;
     ceslid(this);
-    console.log(JSON.stringify(app.globalData));
-    if (app.globalData.m) {
+    var data = {
+      op: "engine"
+    };
+    var postdata = JSON.stringify(data);
+    //获取產品展示数据
+    ajax(list2_api, postdata, function (m) {
       that.setData({
-        m: app.globalData.m
+        data: m
       });
-    } else {
-      //获取数据
-      ajax(index_api, {}, function (m) {
-        that.setData({
-          m: m
-        });
-        app.globalData.m = m;
-      });
-    }
-    if (app.globalData.pic) {
-      that.setData({
-        pic: app.globalData.pic
-      });
-    } else {
-      //获取数据
-      ajax(newslist_api, {}, function (m) {
-        that.setData({
-          pic: m
-        });
-        app.globalData.pic = m;
-      });
-    }
+    }, true);
   },
   //拨打电话
   tel: function () {

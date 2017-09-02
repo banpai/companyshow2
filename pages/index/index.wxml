@@ -83,7 +83,7 @@
         <!--标题栏 end-->
         <view class="t2_bp">{{data.about.info1}}</view>
         <!--了解更多按钮 start-->
-        <view class="seemore">了解更多</view>
+        <navigator url="../../pages/aboutus/aboutus?title=redirect" open-type="redirect"  class="seemore">了解更多</navigator>
         <!--了解更多按钮 end-->
       </view>
     </view>
@@ -100,7 +100,7 @@
       <!--标题栏 end-->
       <view class="tu" wx:for="{{data.goods}}" wx:key="goods" style="width: {{lenwidth}}px;">
         <view class="tb">
-          <navigator url="../wxparse/wxparse" class="ic" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}">
+          <navigator url="../wxparse/wxparse?id={{item.id}}&type=goods2_api" class="ic" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;" data-pic="{{item.thumb}}">
           </navigator>
           <view class="textsj">{{ item.title }}</view>
         </view>
@@ -123,7 +123,7 @@
       <!--标题栏 end-->
       <view class="tu" wx:for="{{data.engine}}" wx:key="engine" style="width: {{lenwidth}}px;">
         <view class="tb">
-          <navigator url="../wxparse/wxparse" class="ic" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;"></navigator>
+          <navigator url="../wxparse/wxparse?id={{item.id}}&type=engine2_api" class="ic" style="background: url('{{item.thumb}}') no-repeat;background-size: cover;"></navigator>
           <view class="textsj">{{ item.title }}</view>
         </view>
       </view>
@@ -143,7 +143,7 @@
       </view>
       <!--标题栏 end-->
       <view style="clear: both;height: 15px;background: #fff;"></view>
-      <view class="weui-cell" wx:for="{{data.news}}" wx:key="news">
+      <view class="weui-cell" wx:for="{{data.news}}" wx:key="news"  bindtap="newsskip" data-id="{{item.id}}">
         <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
           <image src="{{item.thumb}}" style="width: 50px; height: 50px; display: block" />
         </view>
