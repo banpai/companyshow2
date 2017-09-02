@@ -19,13 +19,12 @@ var config = {
     engine2_api:`${host}i=5&c=entry&do=engine2_api&m=siyuan_cms`,
     // goods2_api产品展示
     goods2_api:`${host}i=5&c=entry&do=goods2_api&m=siyuan_cms`,
-    // news2_api   新闻
+    // news2_api新闻
     news2_api:`${host}i=5&c=entry&do=news2_api&m=siyuan_cms`,
-    //addquestion2_api 咨询提交
+    //addquestion2_api咨询提交
     addquestion2_api:`${host}i=5&c=entry&do=addquestion2_api&m=siyuan_cms`,
     //zixunfenlei2_api 我要咨询
     zixunfenlei2_api:`${host}i=5&c=entry&do=zixunfenlei2_api&m=siyuan_cms`,
-    
     index_api: `${host}i=4&c=entry&do=index_api&m=siyuan_cms`,
     newslist_api: `${host}i=4&c=entry&do=newslist_api&m=siyuan_cms`,
     news_detail_api:`${host}i=4&c=entry&do=news_detail_api&m=siyuan_cms`
