@@ -7,12 +7,46 @@ const engine2_api = require('../../config').engine2_api
 const goods2_api = require('../../config').goods2_api
 const news2_api = require('../../config').news2_api
 
+
+
+//统一封装显示的方法
+var show = (function () {
+  //字符串插入指定字符
+  var insert_flg = function (str, flg, sn, cb) {
+    var newstr = "";
+    var tmp = str.substring(0, sn);
+    var tmp2 = str.substring(sn, str.length);
+    newstr += tmp + flg + tmp2;
+    cb(newstr);
+  };
+  //开始
+  var start = function (m, that) {
+    var i = -1, arr = [];
+    for (; (i = m.content.indexOf('src="..', i + 1)) > -1; arr.push(i));
+    arr.forEach(function (v, k) {
+      var pos = m.content.indexOf('src="..');
+      insert_flg(m.content, m.url, (pos + 5), function (str) {
+        m.content = str;
+        console.log(m.content);
+        var len = (arr.length - 1);
+        console.log(k >= len);
+        if (k >= len) {
+          WxParse.wxParse('article', 'html', m.content, that, 5);
+        }
+      });
+    });
+  };
+  return {
+    start: start
+  }
+}());
+
 Page({
   data: {
   },
   onLoad: function (options) {
-		var that = this;
-	
+    var that = this;
+
     /**
      * 初始化emoji设置
      */
@@ -40,75 +74,75 @@ Page({
       "19": "19.gif",
     });
 
-		
-		var data = {
-			id: options.id
-		};
-		var postdata = JSON.stringify(data);
-		if(options.type == 'goods2_api'){
-			ajax(goods2_api, postdata, function(m){
-				WxParse.wxParse('article', 'html', m.content, that, 5);
-			}, true);
-		}else if(options.type == 'engine2_api'){
-			ajax(engine2_api, postdata, function(m){
-				WxParse.wxParse('article', 'html', m.content, that, 5);
-			}, true);
-		}else if(options.type == 'news2_api'){
-			ajax(news2_api, postdata, function(m){
-				WxParse.wxParse('article', 'html', m.content, that, 5);
-			}, true);
-		}
-    
+
+    var data = {
+      id: options.id
+    };
+    var postdata = JSON.stringify(data);
+    if (options.type == 'goods2_api') {
+      ajax(goods2_api, postdata, function (m) {
+        show.start(m, that);
+      }, true);
+    } else if (options.type == 'engine2_api') {
+      ajax(engine2_api, postdata, function (m) {
+        show.start(m, that);
+      }, true);
+    } else if (options.type == 'news2_api') {
+      ajax(news2_api, postdata, function (m) {
+        show.start(m, that);
+      }, true);
+    }
+
 
 
     /**
      * 多数据解析示例
      */
-  //   var replyHtml0 = `<div style="margin-top:10px;height:50px;">
-	// 	<p class="reply">
-	// 		wxParse回复0:不错，喜欢[03][04]
-	// 	</p>	
-	// </div>`;
-  //   var replyHtml1 = `<div style="margin-top:10px;height:50px;">
-	// 	<p class="reply">
-	// 		wxParse回复1:不错，喜欢[03][04]
-	// 	</p>	
-	// </div>`;
-  //   var replyHtml2 = `<div style="margin-top:10px;height:50px;">
-	// 	<p class="reply">
-	// 		wxParse回复2:不错，喜欢[05][07]
-	// 	</p>	
-	// </div>`;
-  //   var replyHtml3 = `<div style="margin-top:10px;height:50px;">
-	// 	<p class="reply">
-	// 		wxParse回复3:不错，喜欢[06][08]
-	// 	</p>	
-	// </div>`;
-  //   var replyHtml4 = `<div style="margin-top:10px; height:50px;">
-	// 	<p class="reply">
-	// 		wxParse回复4:不错，喜欢[09][08]
-	// 	</p>	
-	// </div>`;
-  //   var replyHtml5 = `<div style="margin-top:10px;height:50px;">
-	// 	<p class="reply">
-	// 		wxParse回复5:不错，喜欢[07][08]
-	// 	</p>	
-	// </div>`;
-  //   var replyArr = [];
-  //   replyArr.push(replyHtml0);
-  //   replyArr.push(replyHtml1);
-  //   replyArr.push(replyHtml2);
-  //   replyArr.push(replyHtml3);
-  //   replyArr.push(replyHtml4);
-  //   replyArr.push(replyHtml5);
+    //   var replyHtml0 = `<div style="margin-top:10px;height:50px;">
+    // 	<p class="reply">
+    // 		wxParse回复0:不错，喜欢[03][04]
+    // 	</p>	
+    // </div>`;
+    //   var replyHtml1 = `<div style="margin-top:10px;height:50px;">
+    // 	<p class="reply">
+    // 		wxParse回复1:不错，喜欢[03][04]
+    // 	</p>	
+    // </div>`;
+    //   var replyHtml2 = `<div style="margin-top:10px;height:50px;">
+    // 	<p class="reply">
+    // 		wxParse回复2:不错，喜欢[05][07]
+    // 	</p>	
+    // </div>`;
+    //   var replyHtml3 = `<div style="margin-top:10px;height:50px;">
+    // 	<p class="reply">
+    // 		wxParse回复3:不错，喜欢[06][08]
+    // 	</p>	
+    // </div>`;
+    //   var replyHtml4 = `<div style="margin-top:10px; height:50px;">
+    // 	<p class="reply">
+    // 		wxParse回复4:不错，喜欢[09][08]
+    // 	</p>	
+    // </div>`;
+    //   var replyHtml5 = `<div style="margin-top:10px;height:50px;">
+    // 	<p class="reply">
+    // 		wxParse回复5:不错，喜欢[07][08]
+    // 	</p>	
+    // </div>`;
+    //   var replyArr = [];
+    //   replyArr.push(replyHtml0);
+    //   replyArr.push(replyHtml1);
+    //   replyArr.push(replyHtml2);
+    //   replyArr.push(replyHtml3);
+    //   replyArr.push(replyHtml4);
+    //   replyArr.push(replyHtml5);
 
 
-  //   for (let i = 0; i < replyArr.length; i++) {
-  //     WxParse.wxParse('reply' + i, 'html', replyArr[i], that);
-  //     if (i === replyArr.length - 1) {
-  //       WxParse.wxParseTemArray("replyTemArray",'reply', replyArr.length, that)
-  //     }
-  //   }
+    //   for (let i = 0; i < replyArr.length; i++) {
+    //     WxParse.wxParse('reply' + i, 'html', replyArr[i], that);
+    //     if (i === replyArr.length - 1) {
+    //       WxParse.wxParseTemArray("replyTemArray",'reply', replyArr.length, that)
+    //     }
+    //   }
   }
 
 
