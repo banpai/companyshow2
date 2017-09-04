@@ -6,40 +6,11 @@ const ceslid = require('../../utils/util.js').ceslid
 const engine2_api = require('../../config').engine2_api
 const goods2_api = require('../../config').goods2_api
 const news2_api = require('../../config').news2_api
+const show = require('../../utils/util.js').show
 
 
 
-//统一封装显示的方法
-var show = (function () {
-  //字符串插入指定字符
-  var insert_flg = function (str, flg, sn, cb) {
-    var newstr = "";
-    var tmp = str.substring(0, sn);
-    var tmp2 = str.substring(sn, str.length);
-    newstr += tmp + flg + tmp2;
-    cb(newstr);
-  };
-  //开始
-  var start = function (m, that) {
-    var i = -1, arr = [];
-    for (; (i = m.content.indexOf('src="..', i + 1)) > -1; arr.push(i));
-    arr.forEach(function (v, k) {
-      var pos = m.content.indexOf('src="..');
-      insert_flg(m.content, m.url, (pos + 5), function (str) {
-        m.content = str;
-        console.log(m.content);
-        var len = (arr.length - 1);
-        console.log(k >= len);
-        if (k >= len) {
-          WxParse.wxParse('article', 'html', m.content, that, 5);
-        }
-      });
-    });
-  };
-  return {
-    start: start
-  }
-}());
+
 
 Page({
   data: {

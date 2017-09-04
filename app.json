@@ -13,7 +13,8 @@
     "pages/set/set",
     "pages/consultationlist/consultationlist",
     "pages/edit/edit",
-    "pages/editzx/editzx"
+    "pages/editzx/editzx",
+    "pages/consultationedit/consultationedit"
   ],
   "window":{
     "backgroundTextStyle":"light",

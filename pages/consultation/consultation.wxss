@@ -61,3 +61,15 @@ page,
   line-height: 30px;
   padding-bottom: 7px;
 }
+.my_bt {
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 60rpx;
+  right: 60rpx;
+}
+.my_bt .ic {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
