@@ -25,9 +25,10 @@ var config = {
     addquestion2_api:`${host}i=5&c=entry&do=addquestion2_api&m=siyuan_cms`,
     //zixunfenlei2_api 我要咨询
     zixunfenlei2_api:`${host}i=5&c=entry&do=zixunfenlei2_api&m=siyuan_cms`,
-    index_api: `${host}i=4&c=entry&do=index_api&m=siyuan_cms`,
-    newslist_api: `${host}i=4&c=entry&do=newslist_api&m=siyuan_cms`,
-    news_detail_api:`${host}i=4&c=entry&do=news_detail_api&m=siyuan_cms`
-};
+    //加入我们是enjoyus2_api
+    enjoyus2_api:`${host}i=5&c=entry&do=enjoyus2_api&m=siyuan_cms`,
+    //关于我们 about2_api
+    about2_api:`${host}i=5&c=entry&do=about2_api&m=siyuan_cms`
+};  
 
 module.exports = config
