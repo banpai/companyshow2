@@ -14,13 +14,13 @@ const idea2_api = require('../../config').idea2_api
 
 Page({
   data: {
-    open : false,
+    open: false,
     mark: 0,
     newmark: 0,
-    istoright:true,
-    tel:'',
-    emai:"",
-    desc:'',
+    istoright: true,
+    tel: '',
+    emai: "",
+    desc: '',
     data: {},
     lenwidth: 166,
     latitude: 31.477887,
@@ -160,23 +160,23 @@ Page({
       tel: e.detail.value
     })
   },
-   //邮箱
-   emai: function (e) {
+  //邮箱
+  emai: function (e) {
     this.setData({
       emai: e.detail.value
     })
   },
-   //建议
-   desc: function (e) {
+  //建议
+  desc: function (e) {
     this.setData({
       desc: e.detail.value
     })
   },
   //提交按钮
-  showTopTips:function(){
+  showTopTips: function () {
     var that = this;
     var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-    if ( that.data.tel === '') {
+    if (that.data.tel === '') {
       tusi('请填写手机号');
     } else if (!myreg.test(that.data.tel)) {
       tusi('手机号码错误');
@@ -191,7 +191,7 @@ Page({
         desc: that.data.desc
       }
       console.log(data);
-      ajaxinput(idea2_api, data, function(data){
+      ajaxinput(idea2_api, data, function (data) {
         that.setData({
           tel: '',
           emai: '',
@@ -202,9 +202,9 @@ Page({
     }
   },
   //新闻
-  newsskip:function(e){
+  newsskip: function (e) {
     console.log(e.currentTarget.dataset.id);
-    var url = "../wxparse/wxparse?id="+e.currentTarget.dataset.id+"&type=news2_api";
+    var url = "../wxparse/wxparse?id=" + e.currentTarget.dataset.id + "&type=news2_api";
     wx.navigateTo({
       url: url
     })
