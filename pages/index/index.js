@@ -6,9 +6,11 @@ var jsdx;
 
 //调用ajax
 const ajax = require('../../utils/util.js').ajax
+const ajaxinput = require('../../utils/util.js').ajaxinput
 const tusi = require('../../utils/util.js').tusi
 const ceslid = require('../../utils/util.js').ceslid
 const index2_api = require('../../config').index2_api
+const idea2_api = require('../../config').idea2_api
 
 Page({
   data: {
@@ -188,6 +190,14 @@ Page({
         desc: that.data.desc
       }
       console.log(data);
+      ajaxinput(idea2_api, data, function(data){
+        that.setData({
+          tel: '',
+          emai: '',
+          desc: ''
+        });
+        tusi('提交成功', true);
+      });
     }
   },
   //新闻

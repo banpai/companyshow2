@@ -13,6 +13,6 @@
         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>
     <!--文章 end-->
-
+    
   </view>
 </view>

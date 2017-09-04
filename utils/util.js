@@ -12,7 +12,7 @@ function formatTime(date) {
 }
 
 //封装获取数据的方式
-function ajax (url, data, fun, post) {
+function ajax(url, data, fun, post) {
   wx.showLoading({
     title: '加载中',
   });
@@ -26,7 +26,6 @@ function ajax (url, data, fun, post) {
       "Content-Type": "application/x-www-form-urlencoded"
     };
   }
-  console.log(method);
   //获取数据
   wx.request({
     url: url,
@@ -35,12 +34,11 @@ function ajax (url, data, fun, post) {
     header: header,
     success: function (res) {
       wx.hideLoading();
-      if(res.data.status == 1){
+      if (res.data.status == 1) {
         fun(res.data.result);
       }
     },
-    fail: function(){
-      console.log('111');
+    fail: function () {
       wx.hideLoading();
       wx.showToast({
         title: '接口调用失败',
@@ -50,6 +48,51 @@ function ajax (url, data, fun, post) {
     }
   });
 }
+
+function getAppid(bc) {
+  //调用微信登录接口
+  wx.login({
+    success: function (loginCode) {
+      bc(loginCode.code);
+    }
+  })
+};
+
+//封装获取数据的方式
+function ajaxinput(url, data, fun) {
+  wx.showLoading({
+    title: '加载中',
+  });
+  var method = "POST";
+  var header = {
+    "Content-Type": "application/x-www-form-urlencoded"
+  };
+  getAppid(function (code) {
+    data.code = code;
+    var postdata = JSON.stringify(data);
+    //获取数据
+    wx.request({
+      url: url,
+      method: method,
+      data: postdata,
+      header: header,
+      success: function (res) {
+        wx.hideLoading();
+        if (res.data.status == 1) {
+          fun();
+        }
+      },
+      fail: function () {
+        wx.hideLoading();
+        wx.showToast({
+          title: '接口调用失败',
+          icon: 'loading',
+          duration: 2000
+        })
+      }
+    });
+  })
+};
 
 function formatNumber(n) {
   n = n.toString()
@@ -75,7 +118,7 @@ function tusi(str, flag, fun) {
 }
 
 //封装侧边栏滑动
-function ceslid(that){
+function ceslid(that) {
   // var that = this;
   //重新获取高度
   wx.getSystemInfo({
@@ -84,7 +127,7 @@ function ceslid(that){
       var width2 = +res.windowWidth - 202;
       var height = res.windowHeight - 2;
       var mapwidth = +res.windowWidth - 30;
-      var lenwidth = (+res.windowWidth - 14)/2;
+      var lenwidth = (+res.windowWidth - 14) / 2;
       var screenHeight = res.windowWidth;
       console.log(screenHeight + '===dsd');
       that.setData({
@@ -98,22 +141,22 @@ function ceslid(that){
       })
     }
   });
-  that.tap_ch = function(e){
-    if(this.data.open){
+  that.tap_ch = function (e) {
+    if (this.data.open) {
       this.setData({
-        open : false
+        open: false
       });
-    }else{
+    } else {
       this.setData({
-        open : true
+        open: true
       });
     }
   };
-  that.tap_start = function(e){
+  that.tap_start = function (e) {
     // touchstart事件
     this.data.mark = this.data.newmark = e.touches[0].pageX;
   };
-  that.tap_drag = function(e){
+  that.tap_drag = function (e) {
     // touchmove事件
 
     /*
@@ -121,23 +164,23 @@ function ceslid(that){
      * @newmark是指移动的最新点的x轴坐标 ， @mark是指原点x轴坐标
      */
     this.data.newmark = e.touches[0].pageX;
-    if(this.data.mark < this.data.newmark){
+    if (this.data.mark < this.data.newmark) {
       this.istoright = true;
     }
     /*
      * 手指从右向左移动
      * @newmark是指移动的最新点的x轴坐标 ， @mark是指原点x轴坐标
      */
-    if(this.data.mark > this.data.newmark){
+    if (this.data.mark > this.data.newmark) {
       this.istoright = false;
 
     }
     this.data.mark = this.data.newmark;
 
   },
-  that.tap_end = function(e){
+    that.tap_end = function (e) {
 
-  }
+    }
 }
 
 //统一封装显示的方法
@@ -178,5 +221,6 @@ module.exports = {
   ajax: ajax,
   tusi: tusi,
   ceslid: ceslid,
-  show: show
+  show: show,
+  ajaxinput: ajaxinput
 }
