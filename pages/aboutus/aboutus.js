@@ -17,6 +17,7 @@ Page({
     ceslid(this);
     if (app.globalData.data) {
       that.setData({
+        m: app.globalData.data,
         picc: app.globalData.data.about.descimgs[0]
       });
     }else{
@@ -24,6 +25,7 @@ Page({
       ajax(index2_api, {}, function (m) {
         app.globalData.data = m;
         that.setData({
+          m: m,
           picc: app.globalData.data.about.descimgs[0]
         });
       });

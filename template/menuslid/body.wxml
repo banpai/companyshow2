@@ -5,6 +5,6 @@
   <!--头部loge按钮 start-->
   <view class="head" style="{{width}}">
     <image bindtap="tap_ch" class="ic" src="../../image/icon_component.png" />
-    <image bindtap="tap_ch" class="iclogo" src="../../image/logo.png" />
+    <image bindtap="tap_ch" class="iclogo" src="{{m.about.thumb}}" />
   </view>
   <!--头部logo按钮 end-->

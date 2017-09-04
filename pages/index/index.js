@@ -94,6 +94,7 @@ Page({
         app.globalData.data = m;
         that.setData({
           data: m,
+          m: m,
           latitude: latitude,
           longitude: longitude,
           markers: [{
