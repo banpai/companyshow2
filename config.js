@@ -28,7 +28,11 @@ var config = {
     //加入我们是enjoyus2_api
     enjoyus2_api:`${host}i=5&c=entry&do=enjoyus2_api&m=siyuan_cms`,
     //关于我们 about2_api
-    about2_api:`${host}i=5&c=entry&do=about2_api&m=siyuan_cms`
+    about2_api:`${host}i=5&c=entry&do=about2_api&m=siyuan_cms`,
+    //myquestion2_api 我的咨询
+    myquestion2_api:`${host}i=5&c=entry&do=myquestion2_api&m=siyuan_cms`,
+    //userinfo2_api 提交我的信息
+    userinfo2_api:`${host}i=5&c=entry&do=userinfo2_api&m=siyuan_cms`
 };
 
 module.exports = config

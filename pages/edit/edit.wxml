@@ -9,7 +9,7 @@
             <view class="weui-label">姓名</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入姓名"/>
+            <input class="weui-input" placeholder="请输入姓名" bindinput="name" value="{{name}}" />
         </view>
     </view>
 </view>
@@ -36,7 +36,7 @@
             </picker>
         </view>
         <view class="weui-cell__bd weui-cell__bd_in-select-before">
-            <input class="weui-input" placeholder="请输入手机号" />
+            <input class="weui-input" placeholder="请输入手机号" type="number" bindinput="tel" value="{{tel}}" />
         </view>
     </view>
 </view>
@@ -45,7 +45,7 @@
 <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
         <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="18个字以内" />
+            <input class="weui-input" placeholder="18个字以内" bindinput="address" value="{{address}}"  />
         </view>
     </view>
 </view>
@@ -54,8 +54,7 @@
 <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell">
         <view class="weui-cell__bd">
-            <textarea class="weui-textarea" placeholder="请输入文本" style="height: 3.3em" />
-            <view class="weui-textarea-counter">0/200</view>
+            <textarea class="weui-textarea" placeholder="请输入文本" style="height: 3.3em"  bindinput="introduction" value="{{introduction}}"  />
         </view>
     </view>
 </view>
