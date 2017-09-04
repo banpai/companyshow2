@@ -6,6 +6,21 @@ const ajax = require('../../utils/util.js').ajax
 const tusi = require('../../utils/util.js').tusi
 const zixunfenlei2_api = require('../../config').zixunfenlei2_api
 
+//获取数据
+function getdata(flag, that) {
+    var data = {
+        status: flag
+    };
+    var postdata = JSON.stringify(data);
+    console.log(postdata);
+    //获取数据,
+    ajax(zixunfenlei2_api, postdata, function (m) {
+        that.setData({
+            m: m
+        });
+    }, true);
+}
+
 Page({
     data: {
         motto: 'Hello World',
@@ -25,12 +40,7 @@ Page({
                 });
             }
         });
-        //获取数据,
-        ajax(zixunfenlei2_api, {}, function (m) {
-           that.setData({
-               m: m
-           });
-        });
+        getdata(0, that);
     },
     tabClick: function (e) {
         console.log(e.currentTarget.id === '0');
@@ -45,21 +55,35 @@ Page({
         });
     },
     open: function () {
+        var that = this;
+        var arr = ['默认', '阅读数'];
         wx.showActionSheet({
-            itemList: ['销售', '技术'],
+            itemList: arr,
             success: function (res) {
                 if (!res.cancel) {
-                    console.log(res.tapIndex)
+                    if(res.tapIndex == 0){
+                        getdata(0, that);
+                    }else{
+                        getdata(3, that);
+                    }
+                    console.log(arr[res.tapIndex]);
                 }
             }
         });
     },
     open2: function () {
+        var that = this;
+        var arr = ['最近时间', '最远时间'];
         wx.showActionSheet({
-            itemList: ['综合排序', '距离最近'],
+            itemList: arr,
             success: function (res) {
                 if (!res.cancel) {
-                    console.log(res.tapIndex)
+                    if(res.tapIndex == 0){
+                        getdata(1, that);
+                    }else{
+                        getdata(2, that);
+                    }
+                    console.log(arr[res.tapIndex]);
                 }
             }
         });

@@ -21,7 +21,7 @@
                                 <view class="weui-media-box__title kshl">
                                     <text class="xszc">{{item.name}}</text>
                                     <text class="xszc_zx" bindtap="tapCall" data-tel="{{item.tel}}">电话</text>
-                                    <navigator url="../consultationedit/consultationedit" class="xszc_dh">咨询</navigator>
+                                    <navigator url="../consultationedit/consultationedit?name={{item.name}}&pic={{item.thumb}}" class="xszc_dh">咨询</navigator>
                                 </view>
                                 <view class="weui-media-box__desc zixunli">
                                     <text class="zixunli_zx">咨询</text>
