@@ -5,10 +5,9 @@ var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 
 //调用ajax
 const ajax = require('../../utils/util.js').ajax
-
-//订单取消的接口
-const index_api = require('../../config').index_api
-const newslist_api = require('../../config').newslist_api
+const ajaxinput = require('../../utils/util.js').ajaxinput
+const tusi = require('../../utils/util.js').tusi
+const myquestion2_api = require('../../config').myquestion2_api
 
 Page({
     data: {
@@ -34,15 +33,13 @@ Page({
             that.setData({
                 m: app.globalData.m
             });
-        } else {
-            //获取数据
-            ajax(index_api, {}, function (m) {
-                that.setData({
-                    m: m
-                });
-                app.globalData.m = m;
-            });
         }
+        ajaxinput(myquestion2_api, {}, function (m) {
+            console.log(m);
+            that.setData({
+                data: m
+            });
+        });
     },
     tabClick: function (e) {
         console.log(e.currentTarget.id === '0');

@@ -1,81 +1,22 @@
 <view class="page">
     <view style="height: 15px;"></view>
     <!--咨询列表展示 start-->
-    <view class="border_zx">
+    <view class="border_zx" wx:for="{{data}}" wx:key="zx">
         <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
             <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{icon60}}" />
+                <image class="weui-media-box__thumb" src="{{item.thumb}}" />
             </view>
             <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                 <view class="weui-media-box__title kshl">
-                    <text class="xszc">售后支持</text>
-                    <text class="xsgl">12345km</text>
+                    <text class="xszc" wx:if="{{item.name}}">{{item.name}}</text>
+                    <text class="xsgl">{{item.time}}</text>
                 </view>
                 <view class="weui-media-box__desc zixunli">
                     <text class="zixunli_zx">咨询</text>
                 </view>
             </view>
-        </view>
-    </view>
-    <view class="border_zx">
-        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{icon60}}" />
-            </view>
-            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title kshl">
-                    <text class="xszc">售后支持</text>
-                    <text class="F">电话</text>
-                    <text class="xszc_dh">咨询</text>
-                </view>
-                <view class="weui-media-box__desc zixunli">
-                    <text class="zixunli_zx">咨询</text>
-                    <text class="xsgl">12345km</text>
-                </view>
-            </view>
-        </view>
-    </view>
-    <view class="border_zx">
-        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{icon60}}" />
-            </view>
-            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title kshl">
-                    <text class="xszc">售后支持</text>
-                    <text class="xszc_zx">电话</text>
-                    <text class="xszc_dh">咨询</text>
-                </view>
-                <view class="weui-media-box__desc zixunli">
-                    <text class="zixunli_zx">咨询</text>
-                    <text class="xsgl">12345km</text>
-                </view>
-            </view>
-        </view>
-        <view class="border_zx_bt">
-            技术支持
-        </view>
-    </view>
-    <view class="border_zx">
-        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{icon60}}" />
-            </view>
-            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title kshl">
-                    <text class="xszc">售后支持</text>
-                    <text class="xszc_zx">电话</text>
-                    <text class="xszc_dh">咨询</text>
-                </view>
-                <view class="weui-media-box__desc zixunli">
-                    <text class="zixunli_zx">咨询</text>
-                    <text class="xsgl">12345km</text>
-                </view>
-            </view>
-        </view>
-        <view class="border_zx_bt">
-            技术支持
         </view>
     </view>
     <!--咨询列表展示 end-->
+    <view style="height: 35px;"></view>
 </view>

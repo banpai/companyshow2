@@ -79,7 +79,7 @@ function ajaxinput(url, data, fun) {
       success: function (res) {
         wx.hideLoading();
         if (res.data.status == 1) {
-          fun();
+          fun(res.data.result);
         }
       },
       fail: function () {
