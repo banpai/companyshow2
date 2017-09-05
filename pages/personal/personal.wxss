@@ -1,3 +1,9 @@
 page {
   background: #eee;
 }
+.tjmg {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-top: 11rpx;
+}

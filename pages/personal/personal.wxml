@@ -20,7 +20,7 @@
                     <view class="weui-cells weui-cells_in-small-appmsg">
                         <view bindtap="tapxinxi" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
-                                <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
+                                <image src="../../image/pcenter/tbxx.png" class="tjmg" />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view>同步微信信息</view>
@@ -37,7 +37,7 @@
                     <view class="weui-cells weui-cells_in-small-appmsg">
                         <view bindtap="qiyeshow" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
-                                <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
+                                <image src="../../image/pcenter/qyzs.png" class="tjmg"  />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view>企业展示</view>
@@ -64,7 +64,7 @@
                     <view class="weui-cells weui-cells_in-small-appmsg">
                         <view bindtap="zxshow" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
-                                <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
+                                <image src="../../image/pcenter/zxxx.png" class="tjmg"  />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view>咨询信息</view>
@@ -90,7 +90,7 @@
                     <view class="weui-cells weui-cells_in-small-appmsg">
                         <view bindtap="getaddress" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
-                                <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
+                                <image src="../../image/pcenter/shdz.png" class="tjmg"  />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view>收货地址</view>
@@ -98,7 +98,7 @@
                         </view>
                         <navigator url="../set/set" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
-                                <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
+                                <image src="../../image/pcenter/sqsz.png" class="tjmg"  />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view>授权设置</view>
@@ -106,7 +106,7 @@
                         </navigator>
                         <view bindtap="clearcache" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
-                                <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
+                                <image src="../../image/pcenter/qchc.png" class="tjmg"  />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view>清除缓存</view>

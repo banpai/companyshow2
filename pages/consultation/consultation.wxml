@@ -35,10 +35,11 @@
                     </view>
                     <!--咨询列表展示 end-->
                 </view>
+                <view style="height: 35px;"></view>
                 <!--客服按钮 start-->
                 <button open-type="contact" session-from="weapp" class="weui-flex__item nb_li" hover-class="weui-cell_active">
-                    <view class="my_bt">
-                        <image class="ic" src="../../image/user.png" />
+                    <view class="my_bt" style="background: rgba(255,255,255,.5);border-radius: 50%;">
+                        <image class="ic" src="../../image/ym/z2.png" />
                     </view>
                   </button>
                 <!--客服按钮 end-->

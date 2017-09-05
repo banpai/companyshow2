@@ -29,7 +29,7 @@
         bindtap="sy">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
-            <image class="ic" src="../../image/1.png" />
+            <image class="ic" src="../../image/ym/i1.png" />
           </view>
           <view class="nb_text">产品展示</view>
         </view>
@@ -38,7 +38,7 @@
         bindtap="tel">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
-            <image class="ic" src="../../image/3.png" />
+            <image class="ic" src="../../image/ym/i2.png" />
           </view>
           <view class="nb_text">案列展示</view>
         </view>
@@ -46,7 +46,7 @@
       <navigator url="../connectus/connectus" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
-            <image class="ic" src="../../image/5.png" />
+            <image class="ic" src="../../image/ym/i3.png" />
           </view>
           <view class="nb_text">联系我们</view>
         </view>
@@ -54,7 +54,7 @@
       <navigator url="../../pages/aboutus/aboutus?title=redirect" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
-            <image class="ic" src="../../image/2.png" />
+            <image class="ic" src="../../image/ym/i4.png" />
           </view>
           <view class="nb_text">关于我们</view>
         </view>
@@ -62,7 +62,7 @@
       <navigator url="../joinus/joinus" open-type="redirect" class="weui-flex__item nb_li" hover-class="weui-cell_active">
         <view class="placeholder nb_lid">
           <view class="nb_icon">
-            <image class="ic" src="../../image/2.png" />
+            <image class="ic" src="../../image/ym/i5.png" />
           </view>
           <view class="nb_text">加入我们</view>
         </view>
