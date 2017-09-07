@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp()
+const tusi = require('../../utils/util.js').tusi
 Page({
   data: {
     motto: 'Hello World',
@@ -56,15 +57,17 @@ Page({
   },
   //清理缓存
   clearcache: function () {
-    wx.showToast({
-      title: '成功',
-      icon: 'success',
-      duration: 2000
+    tusi('清理中', false, function(){
+      wx.showToast({
+        title: '成功',
+        icon: 'success',
+        duration: 2000
+      });
     });
+    
   },
   //获取收货地址
   getaddress: function () {
-    console.log('dd');
     wx.chooseAddress({
       success: function (res) {
         console.log(res.userName)

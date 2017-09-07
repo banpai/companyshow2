@@ -195,21 +195,27 @@ var show = (function () {
   };
   //开始
   var start = function (m, that) {
+    console.log(m);
     var i = -1, arr = [];
     for (; (i = m.content.indexOf('src="..', i + 1)) > -1; arr.push(i));
-    arr.forEach(function (v, k) {
-      var pos = m.content.indexOf('src="..');
-      insert_flg(m.content, m.url, (pos + 5), function (str) {
-        m.content = str;
-        console.log(m.content);
-        var len = (arr.length - 1);
-        console.log(k >= len);
-        if (k >= len) {
+    if(arr.length > 0){
+      arr.forEach(function (v, k) {
+        var pos = m.content.indexOf('src="..');
+        insert_flg(m.content, m.url, (pos + 5), function (str) {
+          m.content = str;
           console.log(m.content);
-          WxParse.wxParse('article', 'html', m.content, that, 5);
-        }
+          var len = (arr.length - 1);
+          console.log(k >= len);
+          if (k >= len) {
+            console.log(m.content);
+            WxParse.wxParse('article', 'html', m.content, that, 5);
+          }
+        });
       });
-    });
+    }else{
+      WxParse.wxParse('article', 'html', m.content, that, 5);
+    }
+    
   };
   return {
     start: start
