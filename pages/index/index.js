@@ -11,9 +11,16 @@ const tusi = require('../../utils/util.js').tusi
 const ceslid = require('../../utils/util.js').ceslid
 const index2_api = require('../../config').index2_api
 const idea2_api = require('../../config').idea2_api
+//添加尾部技术支持信息的方法
+const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
 
 Page({
   data: {
+    item: {
+      index: 0,
+      msg: 'this is a template',
+      time: '2016-09-15'
+    },
     open: false,
     mark: 0,
     newmark: 0,
@@ -66,6 +73,8 @@ Page({
     mapwidth: 200
   },
   onLoad: function () {
+    //添加尾部技术支持的信息
+    getFooter.call(this);
     var that = this;
     ceslid(this);
     if (app.globalData.data) {
