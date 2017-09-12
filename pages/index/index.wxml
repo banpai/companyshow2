@@ -8,7 +8,7 @@
   <!-- <view class="page-top {{open ? 'c-state1' : ''}}" style="{{open ? state2 : state3}}"> -->
 
     <include src="../../template/menuslid/body.wxml" />
-
+    <view style="height: 100rpx;"></view>
     <!--顶部banner图片 start-->
     <view class="top_img" style="{{width}}">
       <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">

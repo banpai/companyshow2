@@ -133,20 +133,20 @@ Page({
   },
   // 下拉刷新回调接口
   onPullDownRefresh: function () {
-    wx.showToast({
-      title: '数据加载中',
-      icon: 'loading',
-      duration: 3000
-    });
+    // wx.showToast({
+    //   title: '数据加载中',
+    //   icon: 'loading',
+    //   duration: 3000
+    // });
     // do somthing
   },
   // 上拉加载回调接口
   onReachBottom: function () {
-    wx.showToast({
-      title: '数据加载中',
-      icon: 'loading',
-      duration: 3000
-    });
+    // wx.showToast({
+    //   title: '数据加载中',
+    //   icon: 'loading',
+    //   duration: 3000
+    // });
   },
   //新闻
   newsskip:function(e){

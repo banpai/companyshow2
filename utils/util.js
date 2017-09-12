@@ -183,7 +183,7 @@ function ceslid(that) {
     }
 }
 
-//统一封装显示的方法
+//统一封装显示图片的方法
 var show = (function () {
   //字符串插入指定字符
   var insert_flg = function (str, flg, sn, cb) {

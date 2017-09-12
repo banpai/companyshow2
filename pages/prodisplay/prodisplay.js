@@ -126,19 +126,34 @@ Page({
   },
   // 下拉刷新回调接口
   onPullDownRefresh: function () {
-    wx.showToast({
-      title: '数据加载中',
-      icon: 'loading',
-      duration: 3000
-    });
+    // wx.showToast({
+    //   title: '数据加载中',
+    //   icon: 'loading',
+    //   duration: 3000
+    // });
     // do somthing
   },
   // 上拉加载回调接口
   onReachBottom: function () {
-    wx.showToast({
-      title: '数据加载中',
-      icon: 'loading',
-      duration: 3000
-    });
+    // wx.showToast({
+    //   title: '数据加载中',
+    //   icon: 'loading',
+    //   duration: 3000
+    // });
+    // var len = +this.data.data.length - 1;
+    // console.log();
+    // var id = this.data.data[len].id;
+    // if(id){
+    //   var data = {
+    //     op: "goods",
+    //     id: id
+    //   };
+    //   var postdata = JSON.stringify(data);
+    //   //获取產品展示数据
+    //   ajax(list2_api, postdata, function (m) {
+    //       console.log(m);
+    //   }, true);
+    // }
+    
   }
 })
