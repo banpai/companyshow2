@@ -1,5 +1,5 @@
 <template name="footer">
-    <view class="weui-footer" style="margin-top: 35px;">
+    <view class="weui-footer" style="margin-top: 35px;margin-bottom: 15px;">
         <view class="weui-footer__text">{{name}}</view>
         <view class="weui-footer__text">{{website}}</view>
     </view>

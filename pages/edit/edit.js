@@ -3,6 +3,8 @@ var app = getApp()
 const ajaxinput = require('../../utils/util.js').ajaxinput
 const tusi = require('../../utils/util.js').tusi
 const userinfo2_api = require('../../config').userinfo2_api
+//添加尾部技术支持信息的方法
+const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
 Page({
     data: {
         showTopTips: false,
@@ -36,6 +38,8 @@ Page({
         isAgree: false
     },
     onLoad: function () {
+        //添加尾部技术支持的信息
+    getFooter.call(this);
         console.log('onLoad')
         var that = this
         //调用应用实例的方法获取全局数据

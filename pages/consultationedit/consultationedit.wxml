@@ -1,3 +1,4 @@
+<import src="../../template/tecSupport/tecSupport.wxml"/>
 <view bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{pic}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{namec}}</text>
@@ -86,3 +87,5 @@
 <view class="weui-btn-area" style="margin-bottom: 25px;">
     <button class="weui-btn" type="primary" bindtap="showTopTips">提交</button>
 </view>
+
+<template is="footer" data="{{...tecSupport}}"/>

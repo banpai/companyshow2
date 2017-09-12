@@ -5,7 +5,8 @@ var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 const ajax = require('../../utils/util.js').ajax
 const tusi = require('../../utils/util.js').tusi
 const zixunfenlei2_api = require('../../config').zixunfenlei2_api
-
+//添加尾部技术支持信息的方法
+const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
 //获取数据
 function getdata(flag, that) {
     var data = {
@@ -31,6 +32,8 @@ Page({
         userInfo: {}
     },
     onLoad: function () {
+        //添加尾部技术支持的信息
+    getFooter.call(this);
         var that = this;
         wx.getSystemInfo({
             success: function (res) {

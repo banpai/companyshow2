@@ -1,3 +1,4 @@
+<import src="../../template/tecSupport/tecSupport.wxml"/>
 <view class="page">
     <view class="page__bd">
         <view class="weui-tab">
@@ -43,6 +44,7 @@
                     </view>
                   </button>
                 <!--客服按钮 end-->
+                <template is="footer" data="{{...tecSupport}}"/>
             </view>
         </view>
     </view>

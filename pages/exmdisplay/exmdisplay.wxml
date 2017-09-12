@@ -1,4 +1,4 @@
-<!-- <include src="../../template/menuslid/header.wxml" /> -->
+<import src="../../template/tecSupport/tecSupport.wxml"/>
 
 <view class="page">
   <include src="../../template/menuslid/header.wxml" />
@@ -27,6 +27,6 @@
     <view style="clear: both;height: 1px;background: #fff;"></view>
     <!--产品展示 end-->
 
-
+    <template is="footer" data="{{...tecSupport}}"/>
   </view>
 </view>

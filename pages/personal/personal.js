@@ -2,6 +2,8 @@
 //获取应用实例
 var app = getApp()
 const tusi = require('../../utils/util.js').tusi
+//添加尾部技术支持信息的方法
+const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
 Page({
   data: {
     motto: 'Hello World',
@@ -16,6 +18,8 @@ Page({
     })
   },
   onLoad: function () {
+    //添加尾部技术支持的信息
+    getFooter.call(this);
     console.log('onLoad')
     var that = this
     //调用应用实例的方法获取全局数据

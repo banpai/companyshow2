@@ -9,6 +9,8 @@ const ajax = require('../../utils/util.js').ajax
 const tusi = require('../../utils/util.js').tusi
 const ceslid = require('../../utils/util.js').ceslid
 const index2_api = require('../../config').index2_api
+//添加尾部技术支持信息的方法
+const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
 
 Page({
   data: {
@@ -67,6 +69,8 @@ Page({
     mapwidth: 200
   },
   onLoad: function () {
+    //添加尾部技术支持的信息
+    getFooter.call(this);
     var that = this;
     ceslid(this);
     if (app.globalData.data) {

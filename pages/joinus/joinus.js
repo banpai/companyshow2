@@ -6,11 +6,15 @@ const tusi = require('../../utils/util.js').tusi
 const ceslid = require('../../utils/util.js').ceslid
 const enjoyus2_api = require('../../config').enjoyus2_api
 const show = require('../../utils/util.js').show
+//添加尾部技术支持信息的方法
+const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
 Page({
   data: {
     title: '——加入我们——'
   },
   onLoad: function () {
+    //添加尾部技术支持的信息
+    getFooter.call(this);
     var that = this;
     if (app.globalData.data) {
       that.setData({

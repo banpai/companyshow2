@@ -1,3 +1,4 @@
+<import src="../../template/tecSupport/tecSupport.wxml"/>
 <view class="page">
     <view style="height: 15px;"></view>
     <!--咨询列表展示 start-->
@@ -18,5 +19,7 @@
         </view>
     </view>
     <!--咨询列表展示 end-->
+    <template is="footer" data="{{...tecSupport}}"/>
     <view style="height: 35px;"></view>
+    
 </view>

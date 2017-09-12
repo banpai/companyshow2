@@ -8,7 +8,8 @@ const ajax = require('../../utils/util.js').ajax
 const ajaxinput = require('../../utils/util.js').ajaxinput
 const tusi = require('../../utils/util.js').tusi
 const myquestion2_api = require('../../config').myquestion2_api
-
+//添加尾部技术支持信息的方法
+const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
 Page({
     data: {
         motto: 'Hello World',
@@ -19,6 +20,8 @@ Page({
         userInfo: {}
     },
     onLoad: function () {
+        //添加尾部技术支持的信息
+    getFooter.call(this);
         var that = this;
         wx.getSystemInfo({
             success: function (res) {

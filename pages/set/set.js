@@ -1,3 +1,5 @@
+//添加尾部技术支持信息的方法
+const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
 Page({
   data: {
       name: '微盛'
@@ -9,7 +11,8 @@ Page({
     })
   },
   onLoad: function () {
-    
+    //添加尾部技术支持的信息
+    getFooter.call(this);
   },
   //通讯地址
   txdz: function(e){

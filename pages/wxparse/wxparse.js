@@ -7,7 +7,8 @@ const engine2_api = require('../../config').engine2_api
 const goods2_api = require('../../config').goods2_api
 const news2_api = require('../../config').news2_api
 const show = require('../../utils/util.js').show
-
+//添加尾部技术支持信息的方法
+const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
 
 
 
@@ -16,6 +17,8 @@ Page({
   data: {
   },
   onLoad: function (options) {
+    //添加尾部技术支持的信息
+    getFooter.call(this);
     var that = this;
 
     /**

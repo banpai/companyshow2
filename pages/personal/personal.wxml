@@ -1,3 +1,4 @@
+<import src="../../template/tecSupport/tecSupport.wxml"/>
 <view class="page">
     <view class="page__bd">
         <view class="weui-panel weui-panel_access">
@@ -116,5 +117,7 @@
                 </view>
             </view>
         </view>
+
+        <template is="footer" data="{{...tecSupport}}"/>
     </view>
 </view>
