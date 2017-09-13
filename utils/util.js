@@ -1,5 +1,6 @@
 var WxParse = require('../wxParse/wxParse.js');
-
+//获取应用实例
+var app = getApp();
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -222,11 +223,37 @@ var show = (function () {
   }
 }());
 
+//页面初始化统一分享设置
+function onloadstart(res) {
+  if (res.from === 'button') {
+    // 来自页面内转发按钮
+    console.log(res.target)
+  }
+  var imageUrl = '';
+  console.log(app.globalData.data.banner[0].thumb);
+  if(app.globalData.data){
+    imageUrl = app.globalData.data.banner[0].thumb;
+  }
+  var title = '陌巷啡语';
+  return {
+    title: title,
+    path: '/pages/index/index',
+    imageUrl: imageUrl,
+    success: function(res) {
+      // 转发成功
+    },
+    fail: function(res) {
+      // 转发失败
+    }
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   ajax: ajax,
   tusi: tusi,
   ceslid: ceslid,
   show: show,
-  ajaxinput: ajaxinput
+  ajaxinput: ajaxinput,
+  onloadstart: onloadstart
 }

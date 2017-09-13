@@ -231,7 +231,7 @@
     <!--留言板 end-->
 
     
-    <view class="footerb">
+    <view class="footerb" style="height: 150rpx;">
         <template is="footer" data="{{...tecSupport}}"/>
     </view>
      

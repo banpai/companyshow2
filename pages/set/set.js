@@ -1,8 +1,15 @@
 //添加尾部技术支持信息的方法
 const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
+//分享的统一设置
+const onloadstart = require('../../utils/util.js').onloadstart;
 Page({
   data: {
       name: '微盛'
+  },
+  onShareAppMessage: function(res){
+    //首页初始化可转发
+    var data = onloadstart.call(this, res);
+    return data;
   },
   //事件处理函数
   bindViewTap: function () {

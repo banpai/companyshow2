@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
 var app = getApp()
+//分享的统一设置
+const onloadstart = require('../../utils/util.js').onloadstart;
 var WxParse = require('../../wxParse/wxParse.js');
 const ajax = require('../../utils/util.js').ajax
 const tusi = require('../../utils/util.js').tusi
@@ -12,6 +14,11 @@ const getFooter = require('../../template/tecSupport/tecSupport.js').getFooter;
 Page({
   data: {
     title: '——关于我们——'
+  },
+  onShareAppMessage: function(res){
+    //首页初始化可转发
+    var data = onloadstart.call(this, res);
+    return data;
   },
   onLoad: function () {
     //添加尾部技术支持的信息

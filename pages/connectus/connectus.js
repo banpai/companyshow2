@@ -3,6 +3,8 @@
 var app = getApp()
 
 var jsdx;
+//分享的统一设置
+const onloadstart = require('../../utils/util.js').onloadstart;
 
 //调用ajax
 const ajax = require('../../utils/util.js').ajax
@@ -67,6 +69,11 @@ Page({
     interval: 2000,
     duration: 500,
     mapwidth: 200
+  },
+  onShareAppMessage: function(res){
+    //首页初始化可转发
+    var data = onloadstart.call(this, res);
+    return data;
   },
   onLoad: function () {
     //添加尾部技术支持的信息
