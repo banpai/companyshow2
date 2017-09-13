@@ -82,7 +82,7 @@ Page({
     if (app.globalData.data) {
       that.setData({
         m: app.globalData.data,
-        picc: app.globalData.data.about.descimgs[1]
+        picc: app.globalData.data.about.descimgs[0]
       });
     };
     var data = {
